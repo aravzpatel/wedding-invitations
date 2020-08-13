@@ -1,12 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe "HelloReacts", type: :system do
+RSpec.describe "Personalised Homepage", type: :system do
   before do
     driven_by :selenium, using: :headless_chrome
   end
     
-  it 'should render a React component' do
-    visit '/'
+  it 'should provide a personalised homepage experience' do
+    visit '/users/lilbabymarley'
     expect(page).to have_content('Save the date')
   end
+
+  
 end
