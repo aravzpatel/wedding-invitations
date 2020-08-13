@@ -22,5 +22,11 @@ RSpec.describe "Personalised Homepage", type: :system do
     expect(page).to have_content('Grandma')
   end
 
+  xit 'should show an error if visits a non-existinent page' do
+    visit '/part/somebody'
+    expect(page).to have_content('There is no party with that booking')
+    https://gist.github.com/AhmedNadar/b450fd65eda9c4afb8e04e28f1348af6
+  end
+
   
 end
