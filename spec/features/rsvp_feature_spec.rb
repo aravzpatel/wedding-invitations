@@ -4,7 +4,6 @@ RSpec.describe "Personalised Homepage", type: :system do
   before do
     driven_by :selenium, using: :headless_chrome
     party = Party.create({party: 'lil baby marley'})
-    p party
     party.guests.create({first_name: 'Lil', last_name: 'Harper'})
     party.guests.create({first_name: 'Jack', last_name: 'Harper'})
     party.guests.create({first_name: 'Marley', last_name: 'Harper'})
