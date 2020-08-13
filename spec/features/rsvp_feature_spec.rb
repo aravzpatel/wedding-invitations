@@ -11,7 +11,7 @@ RSpec.describe "Personalised Homepage", type: :system do
     
   it 'should provide a personalised homepage experience' do
     visit '/party/lil-baby-marley'
-    click_button 'rsvp'
+    click_button 'RSVP'
     
     within '.lil' do
       choose 'Attending'
