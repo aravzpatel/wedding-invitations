@@ -3,10 +3,11 @@ require 'rails_helper'
 RSpec.describe "Personalised Homepage", type: :system do
   before do
     driven_by :selenium, using: :headless_chrome
-    Party.create({party: 'lil baby marley'})
-    Guest.create({name: 'Lil Harper', party: 'lil baby marley'})
-    Guest.create({name: 'Jack Harper', party: 'lil baby marley'})
-    Guest.create({name: 'Marley Harper', party: 'lil baby marley'})
+    party = Party.create({party: 'lil baby marley'})
+    p party
+    party.guests.create({first_name: 'Lil', last_name: 'Harper'})
+    party.guests.create({first_name: 'Jack', last_name: 'Harper'})
+    party.guests.create({first_name: 'Marley', last_name: 'Harper'})
   end
     
   it 'should provide a personalised homepage experience' do
