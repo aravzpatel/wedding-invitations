@@ -7,30 +7,25 @@ class Welcome extends React.Component {
     this.listNames = this.listNames.bind(this)
   }
 
-  listNames(guestParty){
-    guestParty.map((guest) =>
-      <li>{guest.first_name}</li>
-    )
-    console.log("listing name")
+  listNames(){
+    var guests = this.props.guests;
+    var names = [];
+    names = guests.map((guest) => guest.first_name);
+    var guestList;
+
+    if(names.length > 1){
+      return guestList = names.splice(0, names.length-1).join(', ') + ' and '+ names[names.length - 1]
+    } else {
+      return guestList = names[0]
+    }
   }
 
   render () {
-    var guests = this.props.guests
-    var names = []
-    names = guests.map((guest) => guest.first_name)
-    var guestList
-
-    if(names.length > 1){
-      guestList = names.splice(names.length-1, 1) + ' and '+ names[names.length - 1]
-    } else {
-      guestList = names[0]
-    }
-
     return (
-      <div className = 'secondary'>
-        <h1>{
-          'Welcome ' + guestList
-        }</h1>
+      <div className = 'welcome_greeting'>
+        <h1>
+          {this.listNames()}
+        </h1>
       </div>
     );
   }

@@ -19,7 +19,7 @@ RSpec.describe "Personalised Homepage", type: :system do
 
   it 'should change the personalised homepage' do
     visit '/party/grandma'
-    expect(page).to have_content('Welcome Grandma')
+    expect(page).to have_content('Grandma')
   end
 
   
