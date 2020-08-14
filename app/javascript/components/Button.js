@@ -27,7 +27,9 @@ class Button extends React.Component {
         <div>
           <RsvpForm />
         </div>
-      )}
+      )
+    }
+
     return (
       <div>
         <div>
