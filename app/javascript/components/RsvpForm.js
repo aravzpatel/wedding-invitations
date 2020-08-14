@@ -4,8 +4,11 @@ class RsvPform extends React.Component {
   render () {
     console.log("Form is inputted")
     return (
-      <React.Fragment>
-      </React.Fragment>
+      <div>
+        <h1>
+          I'm in the game
+        </h1>
+      </div>
     );
   }
 }
