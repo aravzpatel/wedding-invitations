@@ -3,14 +3,26 @@ import Welcome from "./Welcome"
 import PropTypes from "prop-types"
 import Artwork from "./Artwork"
 import Button from "./Button"
+import RsvPform from "./RsvpForm"
 class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       displayWelcome: true
     }
+
+    this.changeView = this.changeView.bind(this)
   }
+
+  changeView(){
+    this.setState({
+      displayWelcome: false
+    })
+  }
+
   render () {
+    let form = null;
+
     let artwork = (
       <div>
         <Artwork />
@@ -24,12 +36,20 @@ class App extends React.Component {
     
     let button = (
       <div>
-        <Button />
+        <Button onClick={this.changeView}/>
       </div>
     )
     
     if(this.state.displayWelcome === false){
-      artwork = null
+      welcome = null;
+      artwork = null;
+      button = null;
+      form = (
+        <div>
+          <RsvPform />
+        </div>
+      )
+
     }
 
     return (
@@ -37,6 +57,7 @@ class App extends React.Component {
         {welcome}
         {artwork}
         {button}
+        {form}
       </div>
     );
   }
