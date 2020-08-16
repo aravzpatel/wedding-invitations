@@ -12,11 +12,13 @@ class App extends React.Component {
     this.state = {
       displayWelcome: true,
       completedRSVP: 0,
-      numberGuests: this.props.guests.length
+      numberGuests: this.props.guests.length,
+      completeAddress: false
     }
 
     this.changeView = this.changeView.bind(this)
-    this.onSubmit = this.onSubmit.bind(this)
+    this.onRSVPSubmit = this.onRSVPSubmit.bind(this)
+    this.onAddressSubmit = this.onAddressSubmit.bind(this)
   }
 
   changeView(){
@@ -25,10 +27,18 @@ class App extends React.Component {
     })
   }
 
-  onSubmit(){
+  onRSVPSubmit(){
     this.setState({
       completedRSVP: this.state.completedRSVP + 1
     })
+  }
+
+  onAddressSubmit(){
+    console.log("do i get here?")
+    this.setState({
+      completeAddress: true
+    })
+    console.log(this.state)
   }
 
   render () {
@@ -39,6 +49,7 @@ class App extends React.Component {
         <Artwork />
       </div>
     )
+
     let welcome = (
       <div>
         <Welcome guests={this.props.guests}/>
@@ -59,7 +70,7 @@ class App extends React.Component {
       button = null;
       form = (
         <div>
-          <RsvPform guests={this.props.guests} onSubmit = {this.onSubmit} />
+          <RsvPform guests={this.props.guests} onSubmit = {this.onRSVPSubmit} />
         </div>
       )
     }
@@ -68,7 +79,17 @@ class App extends React.Component {
       form = null;
       address = (
         <div>
-          <AddressForm party = {this.props.party} />
+          <AddressForm party = {this.props.party} onSubmit = {this.onAddressSubmit} />
+        </div>
+      )
+    }
+
+    if(this.state.completeAddress === true){
+      address = null;
+      artwork = (
+        <div>
+          Thank you for submitting your RSVP
+          <Artwork />
         </div>
       )
     }

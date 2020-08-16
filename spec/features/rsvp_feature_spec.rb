@@ -39,7 +39,7 @@ RSpec.describe "Personalised Homepage", type: :system do
 
     click_button 'Submit'
 
-    expect(page).to have_content("We're delighted that you are able to attend")
+    expect(page).to have_content("Thank you for submitting your RSVP")
   end
 
   

@@ -2,6 +2,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import $ from 'jquery';
 class AddressForm extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  
   handleSubmit(e){
     const data = new FormData(event.target);
     var id = data.get('partyID')
@@ -17,7 +23,8 @@ class AddressForm extends React.Component {
       data: {id: id, address_line_1: line1, address_line_2: line2, town: town, postcode: postcode, country: country},
       success: () => {
         console.log("it worked")
-        // this.props.onSubmit(); 
+        console.log(this.props)
+        this.props.onSubmit(); 
       }
     })
 
@@ -34,6 +41,7 @@ class AddressForm extends React.Component {
             type="text"
             name="addressLine1"
             placeholder="Address Line 1"
+            required
           ></input>
           <input 
             type="text"
@@ -44,16 +52,19 @@ class AddressForm extends React.Component {
             type="text"
             name="town"
             placeholder="Town"
+            required
           ></input>
           <input 
             type="text"
             name="postcode"
             placeholder="postcode"
+            required
           ></input>
           <input 
             type="text"
             name="country"
             placeholder="Country"
+            required
           ></input>
           <input type="submit" value="Submit"></input>
         </form>
