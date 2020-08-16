@@ -46,7 +46,7 @@ class App extends React.Component {
       button = null;
       form = (
         <div>
-          <RsvPform />
+          <RsvPform guests={this.props.guests}/>
         </div>
       )
 

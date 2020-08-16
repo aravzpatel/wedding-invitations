@@ -8,6 +8,7 @@ class Button extends React.Component {
       displayForm: false
     }
   }
+
   
   render () {
     let form = null;
@@ -32,5 +33,9 @@ class Button extends React.Component {
     );
   }
 }
+
+Button.propTypes = {
+  onClick: PropTypes.function
+};
 
 export default Button

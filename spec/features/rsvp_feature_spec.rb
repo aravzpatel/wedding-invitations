@@ -13,19 +13,24 @@ RSpec.describe "Personalised Homepage", type: :system do
     visit '/party/lil-baby-marley'
     click_button 'RSVP'
     
-    within '.lil' do
-      choose 'Attending'
+    within '.Lil' do
+      fill_in 'email', with: 'lil@gmail.com'
+      check 'isGoing'
+      click_button 'Submit'
     end
 
-    within '.jack' do
-      choose 'Attending'
+    within '.Jack' do
+      fill_in 'email', with: 'jacklawrenceharper@gmail.com'
+      check 'isGoing'
+      click_button 'Submit'
     end
 
-    within '.marley' do
-      choose 'Attending'
+    within '.Marley' do
+      fill_in 'email', with: ''
+      check 'isGoing'
+      click_button 'Submit'
     end
 
-    fill_in 'email', with: 'jackharper@gmail.com'
     fill_in 'address1', with: '23 something'
     fill_in 'address2', with: 'street'
     fill_in 'town', with: 'London'
