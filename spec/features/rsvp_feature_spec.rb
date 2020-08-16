@@ -31,10 +31,9 @@ RSpec.describe "Personalised Homepage", type: :system do
       click_button 'Submit'
     end
 
-    fill_in 'address1', with: '23 something'
-    fill_in 'address2', with: 'street'
+    fill_in 'addressLine1', with: '23 something'
+    fill_in 'addressLine2', with: 'street'
     fill_in 'town', with: 'London'
-    fill_in 'county', with: 'london'
     fill_in 'postcode', with: 'ne12 3rd'
     fill_in 'country', with: 'UK'
 

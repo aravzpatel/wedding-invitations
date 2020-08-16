@@ -23,6 +23,7 @@ class RsvPform extends React.Component {
       data: {id: id, first_name: firstName, last_name: lastName, email: email, rsvp: attending},
       success: () => {
         console.log("it worked")
+        this.props.onSubmit(); 
       }
     })
 
@@ -30,8 +31,8 @@ class RsvPform extends React.Component {
   }
 
   render () {
+    console.log(this.props)
     var guests = this.props.guests
-    console.log(guests)
 
     var guest_form = []
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_13_103640) do
+ActiveRecord::Schema.define(version: 2020_08_16_160840) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2020_08_13_103640) do
     t.integer "party_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "email"
     t.index ["first_name"], name: "index_guests_on_first_name"
     t.index ["last_name"], name: "index_guests_on_last_name"
     t.index ["party_id"], name: "index_guests_on_party_id"
@@ -40,6 +41,11 @@ ActiveRecord::Schema.define(version: 2020_08_13_103640) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
     t.string "party"
+    t.string "address_line_1"
+    t.string "address_line_2"
+    t.string "town"
+    t.string "country"
+    t.string "postcode"
     t.index ["slug"], name: "index_parties_on_slug", unique: true
   end
 
