@@ -6,7 +6,6 @@ class RsvPform extends React.Component {
     super(props);
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleSubmit(e){
@@ -28,13 +27,6 @@ class RsvPform extends React.Component {
     })
 
     e.preventDefault();
-  }
-
-  handleInputChange(event){
-    const target = event.target;
-    const value = target.name === 'isGoing' ? target.checked : target.value;
-    const name = target.name;
-    const guestid = target.title
   }
 
   render () {
@@ -59,7 +51,6 @@ class RsvPform extends React.Component {
                 name="firstName"
                 type="text"
                 defaultValue = {value.first_name}
-                onChange = {this.handleInputChange}
               ></input>
               
               <br></br>
@@ -81,6 +72,7 @@ class RsvPform extends React.Component {
                 <input
                   name='isGoing'
                   type='checkbox'
+                  defaultChecked = {value.rsvp}
                   onChange={this.handleInputChange}
                 ></input><br></br>
               </label>
@@ -89,6 +81,7 @@ class RsvPform extends React.Component {
                 <input
                   name='email'
                   type="text"
+                  defaultValue = {value.email}
                   onChange = {this.handleInputChange}
                 ></input><br></br>
               </label>
