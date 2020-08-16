@@ -5,6 +5,7 @@ import Artwork from "./Artwork"
 import Button from "./Button"
 import RsvPform from "./RsvpForm"
 import AddressForm from "./AddressForm"
+import Container from 'react-bootstrap/Container'
 
 class App extends React.Component {
   constructor(props){
@@ -95,13 +96,13 @@ class App extends React.Component {
     }
 
     return (
-      <div>
-        {welcome}
-        {artwork}
-        {button}
-        {form}
-        {address}
-      </div>
+        <div>
+          {welcome}
+          {artwork}
+          {button}
+          {form}
+          {address}
+        </div>
     );
   }
 }

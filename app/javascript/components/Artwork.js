@@ -1,18 +1,20 @@
 import React from "react"
 import logo from "/Users/arav/Documents/Coding/weddingparty/wedding-form-app/app/assets/images/Invite.svg"
 import PropTypes from "prop-types"
+import Image from 'react-bootstrap/Image'
+import Container from 'react-bootstrap/Container'
 class Artwork extends React.Component {
   loadArtwork(){
     return (
-      <img src={logo} alt="Image"></img>
+      <Image src={logo} alt="Image" thumbnail />
     )
   }
   
   render () {
     return (
-      <div className = "artwork">
-        {this.loadArtwork()}
-      </div>
+      <Container>
+          {this.loadArtwork()}
+      </Container>
     );
   }
 }

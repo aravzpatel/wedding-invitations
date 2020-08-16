@@ -34,8 +34,4 @@ class Button extends React.Component {
   }
 }
 
-Button.propTypes = {
-  onClick: PropTypes.function
-};
-
 export default Button
