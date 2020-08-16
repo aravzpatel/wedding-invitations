@@ -9,14 +9,6 @@ class Button extends React.Component {
     }
   }
   
-  // activateForm(e){
-  //   e.preventDefault();
-  //   console.log("Shit I've been clicked");
-  //   this.setState({
-  //     displayForm: !this.state.displayForm
-  //   })
-  // }
-  
   render () {
     let form = null;
 
@@ -40,9 +32,5 @@ class Button extends React.Component {
     );
   }
 }
-
-Button.propTypes = {
-  onClick: PropTypes.function
-};
 
 export default Button
