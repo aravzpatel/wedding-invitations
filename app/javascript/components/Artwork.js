@@ -1,7 +1,10 @@
 import React from "react"
 import logo from "/Users/arav/Documents/Coding/weddingparty/wedding-form-app/app/assets/images/Invite.svg"
+import rsvpbutton from '/Users/arav/Documents/Coding/weddingparty/wedding-form-app/app/assets/images/rsvp.svg'
+import Button from "./Button"
 import PropTypes from "prop-types"
 import Image from 'react-bootstrap/Image'
+import Welcome from "./Welcome"
 
 class Artwork extends React.Component {
   loadArtwork(){
@@ -12,9 +15,8 @@ class Artwork extends React.Component {
         alt="Image" 
         fluid
       />
-      <div className="welcome-greeting">
-          Lil, Jack and Marley
-      </div>
+      <button className="submit" onClick={this.props.onClick}>RSVP</button>
+      <Welcome guests={this.props.guests}/>
     </div>
     )
   }

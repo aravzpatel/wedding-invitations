@@ -2,7 +2,6 @@ import React from "react"
 import Welcome from "./Welcome"
 import PropTypes from "prop-types"
 import Artwork from "./Artwork"
-import Button from "./Button"
 import RsvPform from "./RsvpForm"
 import AddressForm from "./AddressForm"
 import Container from 'react-bootstrap/Container'
@@ -47,28 +46,14 @@ class App extends React.Component {
 
     let artwork = (
       <div>
-        <Artwork />
-      </div>
-    )
-
-    let welcome = (
-      <div>
-        <Welcome guests={this.props.guests}/>
-      </div>
-    )
-    
-    let button = (
-      <div>
-        <Button onClick={this.changeView}/>
+        <Artwork onClick={this.changeView} guests={this.props.guests}/>
       </div>
     )
 
     let address = null;
     
     if(this.state.displayWelcome === false){
-      welcome = null;
       artwork = null;
-      button = null;
       form = (
         <div>
           <RsvPform guests={this.props.guests} onSubmit = {this.onRSVPSubmit} />
@@ -98,9 +83,7 @@ class App extends React.Component {
     return (
         <Container>
           <div className="form-container">
-            {welcome}
             {artwork}
-            {button}
             {form}
             {address}
           </div>
