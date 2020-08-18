@@ -96,13 +96,15 @@ class App extends React.Component {
     }
 
     return (
-        <div>
-          {welcome}
-          {artwork}
-          {button}
-          {form}
-          {address}
-        </div>
+        <Container>
+          <div className="form-container">
+            {welcome}
+            {artwork}
+            {button}
+            {form}
+            {address}
+          </div>
+        </Container>
     );
   }
 }

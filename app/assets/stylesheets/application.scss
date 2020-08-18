@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bootstrap/scss/bootstrap";
+
+body{
+  background-color: white
+}
+
+
+.form-container{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%
+}
+
+.img-fluid{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
