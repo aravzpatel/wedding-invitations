@@ -6,11 +6,16 @@ import Image from 'react-bootstrap/Image'
 class Artwork extends React.Component {
   loadArtwork(){
     return (
+    <div className="artwork-container">
       <Image 
         src={logo} 
         alt="Image" 
         fluid
       />
+      <div className="welcome-greeting">
+          Lil, Jack and Marley
+      </div>
+    </div>
     )
   }
   
