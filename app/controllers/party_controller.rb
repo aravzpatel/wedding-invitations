@@ -7,6 +7,7 @@ class PartyController < ApplicationController
   end
 
   def update
+    p params
     @party =Party.friendly.find(params[:id])
     @party.update(address_line_1: params[:address_line_1], address_line_2: params[:address_line_2], town: params[:town], postcode: params[:postcode], country: params[:country])
   end

@@ -15,7 +15,7 @@
  */
 
  @import "bootstrap/scss/bootstrap";
- @import url('"https://fonts.googleapis.com/css2?family=Hind:wght@500&display=swap"');
+ @import url("https://fonts.googleapis.com/css2?family=Hind:wght@500&display=swap");
 
 body{
   background-color: white
@@ -26,8 +26,8 @@ body{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-height: 600px;
   max-width: 600px;
+  background-color: #FFFAF8;
 }
 
 .artwork-container{
@@ -46,7 +46,8 @@ body{
   font-family: 'Hind', sans-serif;
 }
 
-.submit{
+.submit, .rsvp-button{
+  max-width: 127px;
   width: 89px;
   height: 45px;
   border: 2px solid #FD6666;
@@ -57,7 +58,24 @@ body{
   color: #FD6666;
   font-weight: bold;
   font-size: 16px;
+}
+
+.submit {
   position: absolute;
   bottom: 3%;
   right: 2%;
+}
+
+
+.rsvp-form{
+  margin: 0 auto;
+  width: 70%;
+  text-align: center;
+}
+
+.Header{
+  text-align: center;
+  font-family: 'Hind', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
 }
