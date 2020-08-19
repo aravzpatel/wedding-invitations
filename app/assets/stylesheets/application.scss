@@ -47,6 +47,12 @@ body{
   font-size: calc(14px + (22 - 14) * ((100vw - 300px) / (760 - 300)));
 }
 
+@media (min-width: 768px){
+  .welcome-greeting{
+    font-size: 30px;
+  }
+}
+
 .submit, .rsvp-button{
   max-width: 127px;
   width: 89px;

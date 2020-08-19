@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_16_160840) do
+ActiveRecord::Schema.define(version: 2020_08_19_074518) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2020_08_16_160840) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email"
+    t.boolean "submit"
     t.index ["first_name"], name: "index_guests_on_first_name"
     t.index ["last_name"], name: "index_guests_on_last_name"
     t.index ["party_id"], name: "index_guests_on_party_id"

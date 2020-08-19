@@ -34,7 +34,7 @@ class RsvPform extends React.Component {
   }
 
   render () {
-    console.log(this.props)
+    console.log(this.props.guests)
     var guests = this.props.guests
 
     var guest_form = []
