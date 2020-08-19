@@ -1,6 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import $ from 'jquery';
+import Form from 'react-bootstrap/Form'
+import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
 class AddressForm extends React.Component {
   constructor(props){
     super(props);
@@ -34,40 +37,29 @@ class AddressForm extends React.Component {
   render () {
     console.log(this.props.party)
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
+      <div className="form">
+        <div className="header">Please provide your address</div>
+        <Form onSubmit={this.handleSubmit}>
           <input type="hidden" name="partyID" value={this.props.party.slug}></input>
-          <input 
-            type="text"
-            name="addressLine1"
-            placeholder="Address Line 1"
-            required
-          ></input>
-          <input 
-            type="text"
-            name="addressLine2"
-            placeholder="Address Line 2"
-          ></input>
-          <input 
-            type="text"
-            name="town"
-            placeholder="Town"
-            required
-          ></input>
-          <input 
-            type="text"
-            name="postcode"
-            placeholder="postcode"
-            required
-          ></input>
-          <input 
-            type="text"
-            name="country"
-            placeholder="Country"
-            required
-          ></input>
-          <input type="submit" value="Submit"></input>
-        </form>
+          <Form.Control name="addressLine1" placeholder="Address Line 1" required></Form.Control>
+          <br></br>
+          <Form.Control name="addressLine2" placeholder="Address Line 2" required></Form.Control>
+          <br></br>
+          <Form.Row>
+            <Col>
+              <Form.Control name="town" placeholder="City/Town" required></Form.Control>
+            </Col>
+            <br></br>
+            <Col>
+              <Form.Control name="postcode" placeholder="Postcode" required></Form.Control>
+            </Col>
+            <br></br>
+          </Form.Row>
+          <br></br>
+          <Button className="rsvp-button" type="submit">
+            Submit
+          </Button>
+        </Form>
       </div>
     );
   }

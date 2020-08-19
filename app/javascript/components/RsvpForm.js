@@ -45,23 +45,27 @@ class RsvPform extends React.Component {
           <Form onSubmit={this.handleSubmit}>
             <Form.Control type="hidden" name="guestID" value={value.id}></Form.Control>
             <Form.Row>
-              <Col xs="auto">
+              <Col>
                 <Form.Control name="firstName" defaultValue= {value.first_name}></Form.Control>
               </Col>
-              <Col xs="auto">
+              <Col>
                 <Form.Control name="lastName" defaultValue= {value.last_name}></Form.Control>
               </Col>
             </Form.Row>
             <br></br>
-            <Form.Row className="align-items-center">
-              <Col xs="auto">
+            <Form.Row>
+              <Col>
                 <Form.Control name="email" type="email" placeholder="Enter email"></Form.Control>
               </Col>
-              <Col xs="auto">
+            </Form.Row>
+              
+            <br></br>
+            <Form.Row className="align-items-center">
+              <Col>
                 <Form.Check label="Attending?" type="checkbox" name="isGoing"></Form.Check>
                 <Form.Control.Feedback type="valid">WooHoo!</Form.Control.Feedback>
               </Col>
-              <Col xs="auto">
+              <Col>
                 <Button className="rsvp-button" type="submit">
                   Submit
                 </Button>
@@ -74,8 +78,8 @@ class RsvPform extends React.Component {
     }
 
     return (
-      <div className="rsvp-form">
-        <div className="Header">Please reply by 5th September 2020 to let us know if you can make it</div>
+      <div className="form">
+        <div className="header">Please reply by 5th September 2020 to let us know if you can make it</div>
           <div>
             {guest_form}
           </div>

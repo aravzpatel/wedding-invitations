@@ -1,7 +1,5 @@
 import React from "react"
-import logo from "/Users/arav/Documents/Coding/weddingparty/wedding-form-app/app/assets/images/Invite.svg"
-import rsvpbutton from '/Users/arav/Documents/Coding/weddingparty/wedding-form-app/app/assets/images/rsvp.svg'
-import Button from "./Button"
+import WelcomeImage from "/Users/arav/Documents/Coding/weddingparty/wedding-form-app/app/assets/images/Invite.svg"
 import PropTypes from "prop-types"
 import Image from 'react-bootstrap/Image'
 import Welcome from "./Welcome"
@@ -11,7 +9,7 @@ class Artwork extends React.Component {
     return (
     <div className="artwork-container">
       <Image 
-        src={logo} 
+        src={WelcomeImage} 
         alt="Image" 
         fluid
       />

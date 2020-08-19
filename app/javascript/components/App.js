@@ -5,6 +5,7 @@ import Artwork from "./Artwork"
 import RsvPform from "./RsvpForm"
 import AddressForm from "./AddressForm"
 import Container from 'react-bootstrap/Container'
+import Thankyou from "./Thankyou"
 
 class App extends React.Component {
   constructor(props){
@@ -34,11 +35,9 @@ class App extends React.Component {
   }
 
   onAddressSubmit(){
-    console.log("do i get here?")
     this.setState({
       completeAddress: true
     })
-    console.log(this.state)
   }
 
   render () {
@@ -46,11 +45,13 @@ class App extends React.Component {
 
     let artwork = (
       <div>
-        <Artwork onClick={this.changeView} guests={this.props.guests}/>
+        <Artwork onClick={this.changeView} guests={this.props.guests} complete={this.state.completeAddress}/>
       </div>
     )
 
     let address = null;
+
+    let thankyou = null;
     
     if(this.state.displayWelcome === false){
       artwork = null;
@@ -72,10 +73,9 @@ class App extends React.Component {
 
     if(this.state.completeAddress === true){
       address = null;
-      artwork = (
+      thankyou = (
         <div>
-          Thank you for submitting your RSVP
-          <Artwork />
+          <Thankyou />
         </div>
       )
     }
@@ -86,6 +86,7 @@ class App extends React.Component {
             {artwork}
             {form}
             {address}
+            {thankyou}
           </div>
         </Container>
     );

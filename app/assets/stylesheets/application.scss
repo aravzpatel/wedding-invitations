@@ -41,9 +41,10 @@ body{
 
 .welcome-greeting{
   position: absolute;
-  top: 0.5%;
+  top: 1.5%;
   left: 3.5%;
   font-family: 'Hind', sans-serif;
+  font-size: calc(14px + (22 - 14) * ((100vw - 300px) / (760 - 300)));
 }
 
 .submit, .rsvp-button{
@@ -67,15 +68,17 @@ body{
 }
 
 
-.rsvp-form{
+.form{
   margin: 0 auto;
   width: 70%;
   text-align: center;
 }
 
-.Header{
-  text-align: center;
+.header{
+  text-align: left;
   font-family: 'Hind', sans-serif;
   font-weight: bold;
   font-size: 18px;
+  padding-top:1em;
+  padding-bottom: 1em;
 }
