@@ -11,6 +11,15 @@ class RsvPform extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount(){
+    for(const[index, value] of this.props.guests.entries()){
+      this.setState({
+        [value.first_name]: value.submit
+      })
+    }
+    console.log(this.state)
+  }
+
   handleSubmit(e){
     const data = new FormData(event.target);
     var id = data.get('guestID')
@@ -19,6 +28,10 @@ class RsvPform extends React.Component {
     var email = data.get('email')
     var attending;
     data.get('isGoing') === 'on' ? attending = true : attending = false
+    this.setState({
+      [firstName]: true
+    })
+    console.log(this.state.Marley)
     
     $.ajax({
       url: `/guests`,
@@ -34,7 +47,8 @@ class RsvPform extends React.Component {
   }
 
   render () {
-    console.log(this.props.guests)
+
+
     var guests = this.props.guests
 
     var guest_form = []
@@ -65,11 +79,13 @@ class RsvPform extends React.Component {
                 <Form.Check label="Attending?" type="checkbox" name="isGoing"></Form.Check>
                 <Form.Control.Feedback type="valid">WooHoo!</Form.Control.Feedback>
               </Col>
-              <Col>
-                <Button className="rsvp-button" type="submit">
-                  Submit
-                </Button>
-              </Col>
+              {/* {this.state[0] != true && */}
+                <Col>
+                  <Button className="rsvp-button" type="submit">
+                    Submit
+                  </Button>
+                </Col>
+              {/* } */}
             </Form.Row>
             <br></br>
           </Form>
