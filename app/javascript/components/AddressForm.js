@@ -25,8 +25,6 @@ class AddressForm extends React.Component {
       type: 'PUT',
       data: {id: id, address_line_1: line1, address_line_2: line2, town: town, postcode: postcode, country: country},
       success: () => {
-        console.log("it worked")
-        console.log(this.props)
         this.props.onSubmit(); 
       }
     })
@@ -35,7 +33,6 @@ class AddressForm extends React.Component {
   }
 
   render () {
-    console.log(this.props.party)
     return (
       <div className="form">
         <div className="header">Please provide your address</div>

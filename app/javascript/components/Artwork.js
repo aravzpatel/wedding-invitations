@@ -14,19 +14,7 @@ class Artwork extends React.Component {
     this.loadRSVP=this.loadRSVP.bind(this)
   }
 
-  loadRSVP(){
-    console.log(this.state.rsvp)
-    console.log(this.props.guests.length)
-    if(this.state.rsvp < this.props.guests.length){
-      return (
-        <button className="submit" onClick={this.props.onClick}>RSVP</button>
-      )
-    }
-  }
-
   loadArtwork(){
-    console.log(this.props.submitted)
-    console.log(this.props.guests.length)
     return (
     <div className="artwork-container">
       <Image 

@@ -11,15 +11,6 @@ class RsvPform extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount(){
-    // for(const[index, value] of this.props.guests.entries()){
-    //   this.setState({
-    //     [value.first_name]: value.submit
-    //   })
-    // }
-    // console.log(this.state)
-  }
-
   handleSubmit(e){
     const data = new FormData(event.target);
     var id = data.get('guestID')
@@ -28,7 +19,7 @@ class RsvPform extends React.Component {
     var email = data.get('email')
     var attending;
     data.get('isGoing') === 'on' ? attending = true : attending = false
-    var guestbutton = document.getElementById(firstName)
+    var guestbutton = document.getElementById(id)
 
     $.ajax({
       url: `/guests`,
@@ -76,7 +67,7 @@ class RsvPform extends React.Component {
                 <Form.Control.Feedback type="valid">WooHoo!</Form.Control.Feedback>
               </Col>
               <Col>
-                <Button className="rsvp-button" id={value.first_name} type="submit">
+                <Button className="rsvp-button" id={value.id} type="submit">
                   Submit
                 </Button>
               </Col>
@@ -97,9 +88,5 @@ class RsvPform extends React.Component {
     );
   }
 }
-
-RsvPform.propTypes = {
-  guests: PropTypes.array
-};
 
 export default RsvPform

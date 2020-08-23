@@ -41,7 +41,6 @@ class App extends React.Component {
   }
 
   render () {
-    console.log(this.props)
     let form = null;
     let address = null;
     let thankyou = null;
@@ -91,13 +90,5 @@ class App extends React.Component {
     );
   }
 }
-
-// App.propTypes = {
-//   guests: PropTypes.array
-// };
-
-// App.propTypes = {
-//   submit: PropTypes.number
-// }
 
 export default App
