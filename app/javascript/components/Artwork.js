@@ -11,7 +11,6 @@ class Artwork extends React.Component {
       rsvp: 0
     }
     this.loadArtwork=this.loadArtwork.bind(this)
-    this.loadRSVP=this.loadRSVP.bind(this)
   }
 
   loadArtwork(){
@@ -32,8 +31,6 @@ class Artwork extends React.Component {
   }
   
   render () {
-    console.log(this.props.guests)
-    console.log(this.state)
     return (
       <div>
         {this.loadArtwork()}
