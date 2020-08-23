@@ -62,3 +62,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'react-rails'
 
 gem 'friendly_id', '~> 5.2.4' 
+gem 'bcrypt', '~> 3.1.7'
