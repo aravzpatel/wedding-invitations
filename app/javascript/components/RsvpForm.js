@@ -12,12 +12,12 @@ class RsvPform extends React.Component {
   }
 
   componentDidMount(){
-    for(const[index, value] of this.props.guests.entries()){
-      this.setState({
-        [value.first_name]: value.submit
-      })
-    }
-    console.log(this.state)
+    // for(const[index, value] of this.props.guests.entries()){
+    //   this.setState({
+    //     [value.first_name]: value.submit
+    //   })
+    // }
+    // console.log(this.state)
   }
 
   handleSubmit(e){
@@ -28,17 +28,15 @@ class RsvPform extends React.Component {
     var email = data.get('email')
     var attending;
     data.get('isGoing') === 'on' ? attending = true : attending = false
-    this.setState({
-      [firstName]: true
-    })
-    console.log(this.state.Marley)
-    
+    var guestbutton = document.getElementById(firstName)
+
     $.ajax({
       url: `/guests`,
       type: 'PUT',
       data: {id: id, first_name: firstName, last_name: lastName, email: email, rsvp: attending},
       success: () => {
         console.log("it worked")
+        guestbutton.style.display = "none"
         this.props.onSubmit(); 
       }
     })
@@ -47,8 +45,6 @@ class RsvPform extends React.Component {
   }
 
   render () {
-
-
     var guests = this.props.guests
 
     var guest_form = []
@@ -79,13 +75,11 @@ class RsvPform extends React.Component {
                 <Form.Check label="Attending?" type="checkbox" name="isGoing"></Form.Check>
                 <Form.Control.Feedback type="valid">WooHoo!</Form.Control.Feedback>
               </Col>
-              {/* {this.state[0] != true && */}
-                <Col>
-                  <Button className="rsvp-button" type="submit">
-                    Submit
-                  </Button>
-                </Col>
-              {/* } */}
+              <Col>
+                <Button className="rsvp-button" id={value.first_name} type="submit">
+                  Submit
+                </Button>
+              </Col>
             </Form.Row>
             <br></br>
           </Form>

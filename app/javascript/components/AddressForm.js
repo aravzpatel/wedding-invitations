@@ -56,9 +56,15 @@ class AddressForm extends React.Component {
             <br></br>
           </Form.Row>
           <br></br>
-          <Button className="rsvp-button" type="submit">
-            Submit
-          </Button>
+          <Form.Row>
+            <Col>
+              <Form.Control name="country" placeholder="Country" required></Form.Control>
+            </Col>
+            <br></br>
+            <Col>
+              <Button className="rsvp-button" type="submit">Submit</Button>  
+            </Col>
+          </Form.Row>
         </Form>
       </div>
     );

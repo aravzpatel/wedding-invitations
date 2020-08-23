@@ -39,8 +39,33 @@ RSpec.describe "Personalised Homepage", type: :system do
 
     click_button 'Submit'
 
-    expect(page).to have_content("Thank you for submitting your RSVP")
+    expect(page).to have_xpath("//img[contains(@src,'Thankyou')]")
+    # have_content("Thank you for submitting your RSVP")
   end
 
+  it "should require all guests to submit before proceeding" do
+    visit '/party/lil-baby-marley'
+    click_button 'RSVP'
+    
+    within '.Lil' do
+      fill_in 'email', with: 'lil@gmail.com'
+      check 'isGoing'
+      click_button 'Submit'
+    end
+
+    within '.Jack' do
+      fill_in 'email', with: 'jacklawrenceharper@gmail.com'
+      check 'isGoing'
+      click_button 'Submit'
+    end
+
+    within '.Marley' do
+      fill_in 'email', with: ''
+      check 'isGoing'
+      click_button 'Submit'
+    end
+
+    expect(page).to have_content("Please provide your address")
+  end
   
 end
