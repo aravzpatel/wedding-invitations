@@ -67,5 +67,39 @@ RSpec.describe "Personalised Homepage", type: :system do
 
     expect(page).to have_content("Please provide your address")
   end
+
+  it "should not allow guest to rsvp if all guests have submitted" do
+    visit '/party/lil-baby-marley'
+    click_button 'RSVP'
+    
+    within '.Lil' do
+      fill_in 'email', with: 'lil@gmail.com'
+      check 'isGoing'
+      click_button 'Submit'
+    end
+
+    within '.Jack' do
+      fill_in 'email', with: 'jacklawrenceharper@gmail.com'
+      check 'isGoing'
+      click_button 'Submit'
+    end
+
+    within '.Marley' do
+      fill_in 'email', with: ''
+      check 'isGoing'
+      click_button 'Submit'
+    end
+
+    fill_in 'addressLine1', with: '23 something'
+    fill_in 'addressLine2', with: 'street'
+    fill_in 'town', with: 'London'
+    fill_in 'postcode', with: 'ne12 3rd'
+    fill_in 'country', with: 'UK'
+
+    click_button 'Submit'
+
+    visit '/party/lil-baby-marley'
+    expect(page).not_to have_content("RSVP")
+  end
   
 end
