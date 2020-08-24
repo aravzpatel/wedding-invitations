@@ -15,11 +15,11 @@
  */
 
  @import "bootstrap-sprockets";
- @import "bootstrap";
+ @import "bootstrap/scss/bootstrap";
  @import url("https://fonts.googleapis.com/css2?family=Hind:wght@500&display=swap");
 
 body{
-  background-color: white
+  background-color: #FFFAF8
 }
 
 
@@ -70,6 +70,19 @@ body{
   font-weight: bold;
   font-size: 16px;
 }
+
+.submit:hover{
+  background-color: #FD6666;
+  color: #FFFAF8;
+}
+
+.rsvp-button:hover{
+  background-color: #FD6666;
+  color: #FFFAF8;
+  border: 2px solid #FD6666;
+}
+
+
 
 .submit {
   position: absolute;
