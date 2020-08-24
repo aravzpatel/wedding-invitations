@@ -23,4 +23,3 @@ test:
 production:
   <<: *default
   database: db/my_development_production
-ghu
