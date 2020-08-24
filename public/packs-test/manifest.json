@@ -1,37 +1,37 @@
 {
-  "application.js": "/packs-test/js/application-e775095961a14576ee58.js",
-  "application.js.map": "/packs-test/js/application-e775095961a14576ee58.js.map",
+  "application.js": "/packs-test/js/application-57fde1c9ba38c5ca9f61.js",
+  "application.js.map": "/packs-test/js/application-57fde1c9ba38c5ca9f61.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs-test/js/application-e775095961a14576ee58.js"
+        "/packs-test/js/application-57fde1c9ba38c5ca9f61.js"
       ],
       "js.map": [
-        "/packs-test/js/application-e775095961a14576ee58.js.map"
+        "/packs-test/js/application-57fde1c9ba38c5ca9f61.js.map"
       ]
     },
     "hello_react": {
       "js": [
-        "/packs-test/js/hello_react-f99edbfe77d1b8f1f28a.js"
+        "/packs-test/js/hello_react-23a73c24b280e6cf1f27.js"
       ],
       "js.map": [
-        "/packs-test/js/hello_react-f99edbfe77d1b8f1f28a.js.map"
+        "/packs-test/js/hello_react-23a73c24b280e6cf1f27.js.map"
       ]
     },
     "server_rendering": {
       "js": [
-        "/packs-test/js/server_rendering-80ee0788d1ee8f39063e.js"
+        "/packs-test/js/server_rendering-99728576144fe42ce090.js"
       ],
       "js.map": [
-        "/packs-test/js/server_rendering-80ee0788d1ee8f39063e.js.map"
+        "/packs-test/js/server_rendering-99728576144fe42ce090.js.map"
       ]
     }
   },
-  "hello_react.js": "/packs-test/js/hello_react-f99edbfe77d1b8f1f28a.js",
-  "hello_react.js.map": "/packs-test/js/hello_react-f99edbfe77d1b8f1f28a.js.map",
+  "hello_react.js": "/packs-test/js/hello_react-23a73c24b280e6cf1f27.js",
+  "hello_react.js.map": "/packs-test/js/hello_react-23a73c24b280e6cf1f27.js.map",
   "media/images/Invite.svg": "/packs-test/media/images/Invite-c840e0f1.svg",
   "media/images/Thankyou.svg": "/packs-test/media/images/Thankyou-e0f2890a.svg",
   "media/images/holder.png": "/packs-test/media/images/holder-a691e748.png",
-  "server_rendering.js": "/packs-test/js/server_rendering-80ee0788d1ee8f39063e.js",
-  "server_rendering.js.map": "/packs-test/js/server_rendering-80ee0788d1ee8f39063e.js.map"
+  "server_rendering.js": "/packs-test/js/server_rendering-99728576144fe42ce090.js",
+  "server_rendering.js.map": "/packs-test/js/server_rendering-99728576144fe42ce090.js.map"
 }

@@ -1,5 +1,5 @@
 import React from "react"
-import WelcomeImage from "/Users/arav/Documents/Coding/weddingparty/wedding-form-app/app/assets/images/Invite.svg"
+import WelcomeImage from "../../assets/images/Invite.svg"
 import PropTypes from "prop-types"
 import Image from 'react-bootstrap/Image'
 import Welcome from "./Welcome"
