@@ -50,6 +50,7 @@ class RsvPform extends React.Component {
               <Col>
                 <Form.Control name="firstName" defaultValue= {value.first_name}></Form.Control>
               </Col>
+              <br></br>
               <Col>
                 <Form.Control name="lastName" defaultValue= {value.last_name}></Form.Control>
               </Col>
@@ -65,8 +66,8 @@ class RsvPform extends React.Component {
             <Form.Row className="align-items-center">
               <Col>
                 <Form.Check label="Attending?" type="checkbox" name="isGoing"></Form.Check>
-                <Form.Control.Feedback type="valid">WooHoo!</Form.Control.Feedback>
               </Col>
+              <br></br>
               <Col>
                 <Button className="rsvp-button" id={value.id} type="submit">
                   Submit

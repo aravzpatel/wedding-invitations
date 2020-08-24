@@ -52,7 +52,6 @@ class AddressForm extends React.Component {
             </Col>
             <br></br>
           </Form.Row>
-          <br></br>
           <Form.Row>
             <Col>
               <Form.Control name="country" placeholder="Country" required></Form.Control>
