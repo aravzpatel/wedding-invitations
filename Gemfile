@@ -67,6 +67,8 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'jquery-rails'
 gem 'autoprefixer-rails'
+gem 'bootstrap', '~> 5.0.0.alpha1'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 #swapping for pg
 gem 'pg'
