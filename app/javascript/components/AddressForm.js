@@ -40,7 +40,7 @@ class AddressForm extends React.Component {
           <input type="hidden" name="partyID" value={this.props.party.slug}></input>
           <Form.Control name="addressLine1" placeholder="Address Line 1" required></Form.Control>
           <br></br>
-          <Form.Control name="addressLine2" placeholder="Address Line 2" required></Form.Control>
+          <Form.Control name="addressLine2" placeholder="Address Line 2"></Form.Control>
           <br></br>
           <Form.Row>
             <Col>
