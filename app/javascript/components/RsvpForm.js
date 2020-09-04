@@ -82,7 +82,7 @@ class RsvPform extends React.Component {
 
     return (
       <div className="form">
-        <div className="header">Please reply by 5th September 2020 to let us know if you can make it</div>
+        <div className="header">Please reply by 30th September 2020 to let us know if you can make it</div>
           <div>
             {guest_form}
           </div>
