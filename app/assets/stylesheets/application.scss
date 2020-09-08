@@ -45,7 +45,7 @@ body{
   top: 1%;
   left: 3.5%;
   font-family: 'Hind', sans-serif;
-  font-size: calc(14px + (22 - 14) * ((100vw - 300px) / (760 - 300)));
+  font-size: 16px
 }
 
 @media (min-width: 768px){
@@ -55,8 +55,8 @@ body{
 }
 
 .submit, .rsvp-button{
-  width: 15%;
-  height: 7.5%;
+  width: 89px;
+  height: 45px;
   border: 2px solid #FD6666;
   box-sizing: border-box;
   border-radius: 25px;
