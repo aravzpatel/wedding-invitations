@@ -25,8 +25,6 @@ body{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-width: 600px;
-  height: 600px;
   background-color: #FFFAF8;
   padding-top: 2.5%;
 }
@@ -56,9 +54,8 @@ body{
 }
 
 .submit, .rsvp-button{
-  max-width: 127px;
-  width: 89px;
-  height: 45px;
+  width: 15%;
+  height: 7.5%;
   border: 2px solid #FD6666;
   box-sizing: border-box;
   border-radius: 25px;
@@ -66,7 +63,7 @@ body{
   font-family: 'Hind', sans-serif;
   color: #FD6666;
   font-weight: bold;
-  font-size: 16px;
+  font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (760 - 300)));
 }
 
 .submit:hover{
