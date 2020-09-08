@@ -22,6 +22,7 @@ body{
 
 
 .form-container{
+  max-width: 650px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -41,7 +42,7 @@ body{
 
 .welcome-greeting{
   position: absolute;
-  top: 1.5%;
+  top: 1%;
   left: 3.5%;
   font-family: 'Hind', sans-serif;
   font-size: calc(14px + (22 - 14) * ((100vw - 300px) / (760 - 300)));
@@ -63,7 +64,7 @@ body{
   font-family: 'Hind', sans-serif;
   color: #FD6666;
   font-weight: bold;
-  font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (760 - 300)));
+  font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (760 - 300)));
 }
 
 .submit:hover{
