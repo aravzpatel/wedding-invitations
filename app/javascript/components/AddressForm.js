@@ -4,6 +4,7 @@ import $ from 'jquery';
 import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
+import axios from 'axios'
 class AddressForm extends React.Component {
   constructor(props){
     super(props);
@@ -11,7 +12,7 @@ class AddressForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   
-  handleSubmit(e){
+  handleSubmit(event){
     const data = new FormData(event.target);
     var id = data.get('partyID')
     var line1 = data.get('addressLine1')
@@ -20,16 +21,16 @@ class AddressForm extends React.Component {
     var postcode = data.get('postcode')
     var country = data.get('country')
     
-    $.ajax({
-      url: `/party`,
-      type: 'PUT',
-      data: {id: id, address_line_1: line1, address_line_2: line2, town: town, postcode: postcode, country: country},
-      success: () => {
-        this.props.onSubmit(); 
-      }
+    axios.put('/party', {
+      id: id, address_line_1: line1, address_line_2: line2, town: town, postcode: postcode, country: country
     })
-
-    e.preventDefault();
+    .then((response) => {
+      this.props.onSubmit(); 
+    }), (error) => {
+      console.log(error)
+    }
+    
+    event.preventDefault();
   }
 
   render () {
