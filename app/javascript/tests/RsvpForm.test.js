@@ -1,7 +1,7 @@
 import React from 'react';
 import RsvpForm from '../components/RsvpForm';
 import renderer from 'react-test-renderer';
-import $ from 'jquery';
+import axios from 'axios'
 import { shallow } from 'enzyme';
 
 

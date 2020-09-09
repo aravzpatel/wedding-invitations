@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
+import axios from 'axios'
 class RsvPform extends React.Component {
   constructor(props){
     super(props);
@@ -22,16 +23,29 @@ class RsvPform extends React.Component {
     data.get('isGoing') === 'on' ? attending = true : attending = false
     var guestbutton = document.getElementById(id)
 
-    $.ajax({
-      url: `/guests`,
-      type: 'PUT',
-      data: {id: id, first_name: firstName, last_name: lastName, email: email, rsvp: attending},
-      success: () => {
-        console.log("it worked")
-        guestbutton.style.display = "none"
-        this.props.onSubmit(); 
-      }
+    axios.put('/guests', {
+      id: id, first_name: firstName, 
+      last_name: lastName, email: email, 
+      rsvp: attending
     })
+    .then((response) => {
+      console.log("it worked")
+      guestbutton.style.display = "none"
+      this.props.onSubmit(); 
+    }), (error) => {
+      console.log(error)
+    }
+
+    // $.ajax({
+    //   url: `/guests`,
+    //   type: 'PUT',
+    //   data: {id: id, first_name: firstName, last_name: lastName, email: email, rsvp: attending},
+    //   success: () => {
+    //     console.log("it worked")
+    //     guestbutton.style.display = "none"
+    //     this.props.onSubmit(); 
+    //   }
+    // })
 
     e.preventDefault();
   }
