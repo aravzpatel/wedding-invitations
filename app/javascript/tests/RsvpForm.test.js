@@ -2,7 +2,7 @@ import React from 'react';
 import RsvpForm from '../components/RsvpForm';
 import renderer from 'react-test-renderer';
 import axios from 'axios'
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 
 test('Component builds form for one guest', () => {
@@ -25,33 +25,23 @@ test('Component builds form for multiple guests', () => {
   expect(tree).toMatchSnapshot();
 })
 
+jest.mock('axios')
 
-// jest.mock('jquery')
-// test('Component calls API when information is filled in', () => {
-//   // var $ = require('jquery')
-//   const guests = [{id: 1, first_name: 'Jack', last_name: 'Harper'}]
-//   const submit = jest.fn()
-
-//   const spy = jest.spyOn(RsvpForm.prototype, 'handleSubmit');
-
-//   const component = shallow(
-//     <RsvpForm guests={guests} onSubmit={submit}/>
-//   )
-//   // const event = {}
-//   component.instance().handleSubmit();
-//   expect(spy).toHaveBeenCalled();
-
-
-//   // const spy = jest.spyOn(component.instance(), "handleSubmit");
-//   // component.instance().forceUpdate();
+it('Calls a put request to the database', async () => {
+  axios.put.mockResolvedValue({
+    status: 204
+  })
   
-//   // const button = component.find('.rsvp-button')
-//   // console.log(button.debug())
+  const guests = [{id: 1, first_name: 'Jack', last_name: 'Harper'}]
 
-//   // button.click();
+  const component = mount(
+    <RsvpForm guests = {guests}/>
+  )
 
-//   // console.log(button.debug())
+  const form = component.find('form')
+  form.simulate('submit')
+
+  await expect(axios.put).toHaveBeenCalledTimes(1)
+  expect(axios.put).toHaveBeenCalledWith("/guests", {"id": "1", "first_name": 'Jack', "last_name": 'Harper', "email": '', "rsvp": false})
   
-//   // // console.log(component.debug())
-//   // expect(spy).toHaveBeenCalled()
-// })
+})

@@ -13,7 +13,7 @@ class RsvPform extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(e){
+  handleSubmit(event){
     const data = new FormData(event.target);
     var id = data.get('guestID')
     var firstName = data.get('firstName')
@@ -36,18 +36,7 @@ class RsvPform extends React.Component {
       console.log(error)
     }
 
-    // $.ajax({
-    //   url: `/guests`,
-    //   type: 'PUT',
-    //   data: {id: id, first_name: firstName, last_name: lastName, email: email, rsvp: attending},
-    //   success: () => {
-    //     console.log("it worked")
-    //     guestbutton.style.display = "none"
-    //     this.props.onSubmit(); 
-    //   }
-    // })
-
-    e.preventDefault();
+    event.preventDefault();
   }
 
   render () {
