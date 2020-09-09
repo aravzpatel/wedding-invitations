@@ -21,10 +21,20 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-destructuring": "^7.10.4",
+    "@babel/plugin-transform-regenerator": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
     "babel-jest": "^26.3.0",
+    "babel-plugin-dynamic-import-node": "^2.3.3",
+    "babel-plugin-macros": "^2.8.0",
     "babel-preset-env": "^1.7.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.4",
+    "enzyme-to-json": "^3.5.0",
     "jest": "^26.4.2",
     "react-test-renderer": "^16.13.1",
     "webpack-dev-server": "^3.11.0"
@@ -45,11 +55,18 @@
       "<rootDir>/app/javascript"
     ],
     "moduleNameMapper": {
-      "^@/(.*)$": "<rootDir>/$1"
+      "^@/(.*)$": "<rootDir>/$1",
+      "\\.svg": "<rootDir>/app/javascript/tests/__mocks__/svgMock.js"
     },
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
-    }
+    },
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFiles": [
+      "./app/javascript/tests/setupTests.js"
+    ]
   },
   "scripts": {
     "test": "jest"

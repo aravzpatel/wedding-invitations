@@ -1,6 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Welcome component creates a string of users 1`] = `
+exports[`Welcome component combines two users into one string 1`] = `
+<div
+  className="welcome-greeting"
+>
+  <div>
+    Jack and Jill
+  </div>
+</div>
+`;
+
+exports[`Welcome component creates a single string of 1 user 1`] = `
 <div
   className="welcome-greeting"
 >
