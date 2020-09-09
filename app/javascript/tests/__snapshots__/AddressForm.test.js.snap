@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Thankyou component renders without an rsvp button 1`] = `
+<div
+  className="form"
+>
+  <div
+    className="header"
+  >
+    Please provide your address
+  </div>
+  <form
+    className=""
+    onSubmit={[Function]}
+  >
+    <input
+      name="partyID"
+      type="hidden"
+      value="RavingLooneyParty"
+    />
+    <input
+      className="form-control"
+      name="addressLine1"
+      placeholder="Address Line 1"
+      required={true}
+    />
+    <br />
+    <input
+      className="form-control"
+      name="addressLine2"
+      placeholder="Address Line 2"
+    />
+    <br />
+    <div
+      className="form-row"
+    >
+      <div
+        className="col"
+      >
+        <input
+          className="form-control"
+          name="town"
+          placeholder="City/Town"
+          required={true}
+        />
+      </div>
+      <br />
+      <div
+        className="col"
+      >
+        <input
+          className="form-control"
+          name="postcode"
+          placeholder="Postcode"
+          required={true}
+        />
+      </div>
+      <br />
+    </div>
+    <div
+      className="form-row"
+    >
+      <div
+        className="col"
+      >
+        <input
+          className="form-control"
+          name="country"
+          placeholder="Country"
+          required={true}
+        />
+      </div>
+      <br />
+      <div
+        className="col"
+      >
+        <button
+          className="rsvp-button btn btn-primary"
+          disabled={false}
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+`;

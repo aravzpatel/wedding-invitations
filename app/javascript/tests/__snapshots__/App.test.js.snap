@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App re-renders with correct forms 1`] = `
+<Container
+  fluid={false}
+>
+  <div
+    className="form-container"
+  >
+    <div>
+      <RsvPform
+        guests={
+          Array [
+            Object {
+              "first_name": "Jack",
+              "id": 1,
+              "last_name": "Harper",
+            },
+            Object {
+              "first_name": "Jill",
+              "id": 2,
+              "last_name": "Harper",
+            },
+          ]
+        }
+        onSubmit={[Function]}
+      />
+    </div>
+  </div>
+</Container>
+`;
+
+exports[`App re-renders with correct forms 2`] = `
+<Container
+  fluid={false}
+>
+  <div
+    className="form-container"
+  >
+    <div>
+      <AddressForm
+        onSubmit={[Function]}
+      />
+    </div>
+  </div>
+</Container>
+`;
+
+exports[`App re-renders with correct forms 3`] = `
+<Container
+  fluid={false}
+>
+  <div
+    className="form-container"
+  >
+    <div>
+      <Thankyou />
+    </div>
+  </div>
+</Container>
+`;
+
+exports[`App renders with welcome message 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="form-container"
+  >
+    <div>
+      <div>
+        <div
+          className="artwork-container"
+        >
+          <img
+            alt="Image"
+            className="img-fluid"
+            src="ArtworkMock"
+          />
+          <div
+            className="welcome-greeting"
+          >
+            <div>
+              Jack and Jill
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

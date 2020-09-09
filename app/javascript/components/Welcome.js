@@ -1,10 +1,10 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 class Welcome extends React.Component {
   constructor(props){
     super(props);
 
-    this.listNames = this.listNames.bind(this)
+    this.listNames = this.listNames.bind(this);
   }
 
   listNames(){
@@ -14,9 +14,9 @@ class Welcome extends React.Component {
     var guestList;
 
     if(names.length > 1){
-      return guestList = names.splice(0, names.length-1).join(', ') + ' and '+ names[names.length - 1]
+      return guestList = names.splice(0, names.length-1).join(", ") + " and "+ names[names.length - 1];
     } else {
-      return guestList = names[0]
+      return guestList = names[0];
     }
   }
 
@@ -35,4 +35,4 @@ Welcome.propTypes = {
   guests: PropTypes.array
 };
 
-export default Welcome
+export default Welcome;
