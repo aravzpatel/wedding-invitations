@@ -29,7 +29,7 @@ class AddressForm extends React.Component {
     }), (error) => {
       console.log(error)
     }
-    
+
     event.preventDefault();
   }
 
