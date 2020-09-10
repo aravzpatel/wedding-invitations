@@ -45,7 +45,7 @@ class App extends React.Component {
 
     let artwork = (
       <div>
-        <Artwork onClick={this.changeView} guests={this.props.guests} complete={this.state.completeAddress} submitted={this.props.submitted}/>
+        <Artwork onClick={this.changeView} guests={this.props.guests} submitted={this.props.submitted}/>
       </div>
     );
 
