@@ -1,13 +1,13 @@
 {
-  "application.js": "/packs/js/application-ace2025433e3928e2f41.js",
-  "application.js.map": "/packs/js/application-ace2025433e3928e2f41.js.map",
+  "application.js": "/packs/js/application-a22f383cf8d269ef7e48.js",
+  "application.js.map": "/packs/js/application-a22f383cf8d269ef7e48.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-ace2025433e3928e2f41.js"
+        "/packs/js/application-a22f383cf8d269ef7e48.js"
       ],
       "js.map": [
-        "/packs/js/application-ace2025433e3928e2f41.js.map"
+        "/packs/js/application-a22f383cf8d269ef7e48.js.map"
       ]
     },
     "hello_react": {
@@ -20,10 +20,17 @@
     },
     "server_rendering": {
       "js": [
+<<<<<<< HEAD
         "/packs/js/server_rendering-b40491c369a8a6a4b40d.js"
       ],
       "js.map": [
         "/packs/js/server_rendering-b40491c369a8a6a4b40d.js.map"
+=======
+        "/packs/js/server_rendering-991389bb4d3a987f77e3.js"
+      ],
+      "js.map": [
+        "/packs/js/server_rendering-991389bb4d3a987f77e3.js.map"
+>>>>>>> 3ae818322a661927ce7ed6ebd590e305ccd77d96
       ]
     }
   },
@@ -31,6 +38,11 @@
   "hello_react.js.map": "/packs/js/hello_react-7e78d468a15c89458540.js.map",
   "media/images/Invite.svg": "/packs/media/images/Invite-c35947d6.svg",
   "media/images/Thankyou.svg": "/packs/media/images/Thankyou-2a30c429.svg",
+<<<<<<< HEAD
   "server_rendering.js": "/packs/js/server_rendering-b40491c369a8a6a4b40d.js",
   "server_rendering.js.map": "/packs/js/server_rendering-b40491c369a8a6a4b40d.js.map"
+=======
+  "server_rendering.js": "/packs/js/server_rendering-991389bb4d3a987f77e3.js",
+  "server_rendering.js.map": "/packs/js/server_rendering-991389bb4d3a987f77e3.js.map"
+>>>>>>> 3ae818322a661927ce7ed6ebd590e305ccd77d96
 }

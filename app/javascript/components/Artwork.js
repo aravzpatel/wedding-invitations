@@ -6,9 +6,7 @@ import Welcome from "./Welcome";
 class Artwork extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      rsvp: 0
-    };
+
     this.loadArtwork=this.loadArtwork.bind(this);
   }
 

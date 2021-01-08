@@ -40,7 +40,6 @@ RSpec.describe "Personalised Homepage", type: :system do
     click_button 'Submit'
 
     expect(page).to have_xpath("//img[contains(@src,'Thankyou')]")
-    # have_content("Thank you for submitting your RSVP")
   end
 
   it "should require all guests to submit before proceeding" do
