@@ -4,15 +4,16 @@ import RsvPform from "./RsvpForm";
 import AddressForm from "./AddressForm";
 import Container from "react-bootstrap/Container";
 import Thankyou from "./Thankyou";
+import ConfirmationForm from "./ConfirmationForm";
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       displayWelcome: true,
       completedRSVP: 0,
       numberGuests: this.props.guests.length,
-      completeAddress: false
+      completeAddress: false,
     };
 
     this.changeView = this.changeView.bind(this);
@@ -20,54 +21,65 @@ class App extends React.Component {
     this.onAddressSubmit = this.onAddressSubmit.bind(this);
   }
 
-  changeView(){
+  changeView() {
     this.setState({
-      displayWelcome: false
+      displayWelcome: false,
     });
   }
 
-  onRSVPSubmit(){
+  onRSVPSubmit() {
     this.setState({
-      completedRSVP: this.state.completedRSVP + 1
+      completedRSVP: this.state.completedRSVP + 1,
     });
   }
 
-  onAddressSubmit(){
+  onAddressSubmit() {
     this.setState({
-      completeAddress: true
+      completeAddress: true,
     });
   }
 
-  render () {
+  render() {
     let form = null;
     let address = null;
     let thankyou = null;
 
     let artwork = (
       <div>
-        <Artwork onClick={this.changeView} guests={this.props.guests} submitted={this.props.submitted}/>
+        <Artwork
+          onClick={this.changeView}
+          guests={this.props.guests}
+          submitted={this.props.submitted}
+        />
       </div>
     );
 
-    if(this.state.displayWelcome === false){
+    if (this.state.displayWelcome === false) {
       artwork = null;
       form = (
         <div>
-          <RsvPform guests={this.props.guests} onSubmit = {this.onRSVPSubmit} />
+          <ConfirmationForm
+            guests={this.props.guests}
+            guestNumber={this.state.completedRSVP}
+            onSubmit={this.onRSVPSubmit}
+          />
         </div>
       );
     }
 
-    if(this.state.completedRSVP === this.state.numberGuests){
+    if (this.state.completedRSVP === this.state.numberGuests) {
       form = null;
       address = (
         <div>
-          <AddressForm party = {this.props.party} onSubmit = {this.onAddressSubmit} />
+          <AddressForm
+            party={this.props.party}
+            onSubmit={this.onAddressSubmit}
+          />
         </div>
       );
     }
 
-    if(this.state.completeAddress === true){
+    if (this.state.completeAddress === true) {
       address = null;
       thankyou = (
         <div>

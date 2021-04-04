@@ -26,7 +26,6 @@ class RsvPform extends React.Component {
       rsvp: attending
     })
       .then((response) => {
-        console.log("it worked");
         guestbutton.style.display = "none";
         this.props.onSubmit(); 
       }), (error) => {
