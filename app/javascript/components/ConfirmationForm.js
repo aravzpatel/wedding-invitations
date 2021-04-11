@@ -9,9 +9,14 @@ const ConfirmationForm = ({ guests, guestNumber }) => {
 
   const [dietaryRequirements, setDietaryRequirements] = useState(null);
   const [otherDietRequirement, setOtherDietRequirement] = useState("");
-
-  console.log(otherDietRequirement);
-
+  const dietaryOptions = [
+    { value: "none", label: "None" },
+    { value: "vegetarian", label: "Vegetarian" },
+    { value: "vegan", label: "Vegan" },
+    { value: "gluten", label: "Gluten Free" },
+    { value: "lactose", label: "Lactose Free" },
+    { value: "other", label: "Other" },
+  ];
   return (
     <div>
       <div>
@@ -72,53 +77,13 @@ const ConfirmationForm = ({ guests, guestNumber }) => {
         {isAttending && (
           <>
             <p>Dietary Requirements</p>
-            <RadioInput
-              label="None"
-              value="none"
-              onChange={setDietaryRequirements}
+            <RadioGroup
               state={dietaryRequirements}
-            />
-            <RadioInput
-              label="Vegetarian"
-              value="vegetarian"
               onChange={setDietaryRequirements}
-              state={dietaryRequirements}
+              otherState={otherDietRequirement}
+              otherOnChange={setOtherDietRequirement}
+              options={dietaryOptions}
             />
-            <RadioInput
-              label="Vegan"
-              value="vegan"
-              onChange={setDietaryRequirements}
-              state={dietaryRequirements}
-            />
-            <RadioInput
-              label="Gluten Free"
-              value="gluten free"
-              onChange={setDietaryRequirements}
-              state={dietaryRequirements}
-            />
-            <RadioInput
-              label="Lactose Free"
-              value="lactose free"
-              onChange={setDietaryRequirements}
-              state={dietaryRequirements}
-            />
-            <label>
-              <input
-                type="radio"
-                value={dietaryRequirements === "other"}
-                checked={dietaryRequirements === "other"}
-                onChange={() => setDietaryRequirements("other")}
-              />
-              Other
-              {dietaryRequirements === "other" && (
-                <input
-                  type="text"
-                  value={otherDietRequirement}
-                  placeholder="Enter here"
-                  onChange={(e) => setOtherDietRequirement(e.target.value)}
-                />
-              )}
-            </label>
           </>
         )}
       </form>
@@ -131,13 +96,42 @@ const RadioInput = ({ label, value, state, onChange }) => {
     <label>
       <input
         type="radio"
-        value={state === value}
+        value={value}
         checked={state === value}
         onChange={() => onChange(value)}
       />
       {label}
     </label>
   );
+};
+
+const RadioGroup = ({
+  state,
+  onChange,
+  otherState,
+  otherOnChange,
+  options,
+}) => {
+  return options.map((option) => {
+    return (
+      <div key={option.value}>
+        <RadioInput
+          label={option.label}
+          value={option.value}
+          state={state}
+          onChange={onChange}
+        />
+        {state === "other" && option.value === "other" && (
+          <input
+            type="text"
+            value={otherState}
+            placeholder="Enter here"
+            onChange={(e) => otherOnChange(e.target.value)}
+          />
+        )}
+      </div>
+    );
+  });
 };
 
 export default ConfirmationForm;
