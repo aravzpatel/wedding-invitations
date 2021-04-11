@@ -5,10 +5,11 @@ import Button from "react-bootstrap/Button";
 import axios from "axios";
 
 const ConfirmationForm = ({ guests, guestNumber }) => {
-  const [isAttending, setAttending] = useState(null);
-
+  const [isAttendingWedding, setAttending] = useState(null);
+  const [isAttendingSunday, setAttendingSunday] = useState(null);
   const [dietaryRequirements, setDietaryRequirements] = useState(null);
   const [otherDietRequirement, setOtherDietRequirement] = useState("");
+
   const dietaryOptions = [
     { value: "none", label: "None" },
     { value: "vegetarian", label: "Vegetarian" },
@@ -16,6 +17,16 @@ const ConfirmationForm = ({ guests, guestNumber }) => {
     { value: "gluten", label: "Gluten Free" },
     { value: "lactose", label: "Lactose Free" },
     { value: "other", label: "Other" },
+  ];
+
+  const attendingOptions = [
+    { value: true, label: "Yes" },
+    { value: false, label: "No" },
+    {
+      value: "quarantine",
+      label:
+        "Hopefully, but I am travelling from overseas and if I need to quarantine I won’t be able to make it",
+    },
   ];
   return (
     <div>
@@ -33,48 +44,12 @@ const ConfirmationForm = ({ guests, guestNumber }) => {
         <h2>Saturday 17th July, The Master Shipwrights House</h2>
         <p>Ceremony & Celebration</p>
         <p>Event Attendance</p>
-        <div>
-          <label>
-            <input
-              type="radio"
-              id="attending-yes"
-              name="attending-yes"
-              value={isAttending === true}
-              checked={isAttending === true}
-              onChange={() => setAttending(true)}
-              data-testid="yes"
-            />
-            Yes
-          </label>
-        </div>
-        <div>
-          <label>
-            <input
-              type="radio"
-              id="attending-no"
-              name="no"
-              value={isAttending === false}
-              checked={isAttending === false}
-              onChange={() => setAttending(false)}
-            />
-            No
-          </label>
-        </div>
-        <div>
-          <label>
-            <input
-              type="radio"
-              id="attending-maybe"
-              name="maybe"
-              value={isAttending === "covid"}
-              checked={isAttending === "covid"}
-              onChange={() => setAttending("covid")}
-            />
-            Hopefully, but I am travelling from overseas and if I need to
-            quarantine I won’t be able to make it
-          </label>
-        </div>
-        {isAttending && (
+        <RadioGroup
+          state={isAttendingWedding}
+          onChange={setAttending}
+          options={attendingOptions}
+        />
+        {isAttendingWedding && (
           <>
             <p>Dietary Requirements</p>
             <RadioGroup
@@ -83,6 +58,13 @@ const ConfirmationForm = ({ guests, guestNumber }) => {
               otherState={otherDietRequirement}
               otherOnChange={setOtherDietRequirement}
               options={dietaryOptions}
+            />
+            <h2>Sunday 18th July, The Dog and Bell pub</h2>
+            <p>Hog Roast</p>
+            <RadioGroup
+              state={isAttendingSunday}
+              onChange={setAttendingSunday}
+              options={attendingOptions}
             />
           </>
         )}

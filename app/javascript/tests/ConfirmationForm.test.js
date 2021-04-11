@@ -35,7 +35,6 @@ describe("When a user reaches the confirmation form", () => {
   });
 
   describe("when a user selects attending or probably", () => {
-    let vegetarian;
     beforeAll(async () => {
       const guests = [{ id: 1, first_name: "Jack", last_name: "Harper" }];
       const guestNumber = 0;
@@ -47,6 +46,7 @@ describe("When a user reaches the confirmation form", () => {
     });
 
     it("shows further options", async () => {
+      //Dietary
       await screen.findByText("Dietary Requirements");
       await screen.findByText("None");
       await screen.findByText("Vegetarian");
@@ -54,6 +54,16 @@ describe("When a user reaches the confirmation form", () => {
       await screen.findByText("Gluten Free");
       await screen.findByText("Lactose Free");
       await screen.findByText("Other");
+
+      //Sunday
+      const yes = screen.getAllByLabelText("Yes");
+      expect(yes.length).toEqual(2);
+      const no = screen.getAllByLabelText("No");
+      expect(no.length).toEqual(2);
+      const quarantineDependent = screen.getAllByLabelText("Hopefully", {
+        exact: false,
+      });
+      expect(quarantineDependent.length).toEqual(2);
     });
   });
 });
