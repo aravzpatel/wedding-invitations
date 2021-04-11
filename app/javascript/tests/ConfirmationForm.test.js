@@ -2,33 +2,53 @@
 //test that when submit it calls the right end point
 
 import ConfirmationForm from "../components/ConfirmationForm";
-import { fireEvent, render } from "@testing-library/react";
+import {
+  findByTestId,
+  fireEvent,
+  getByTestId,
+  render,
+  screen,
+  getByLabelText,
+} from "@testing-library/react";
 import React from "react";
 
 describe("When a user reaches the confirmation form", () => {
   describe("when a user submits the form", () => {
-    let component;
+    let component, attending, notAttending, quarantineDependent;
     beforeAll(async () => {
       const guests = [{ id: 1, first_name: "Jack", last_name: "Harper" }];
       const guestNumber = 0;
-      component = render(
-        <ConfirmationForm guests={guests} guestNumber={guestNumber} />
-      );
-      await component.findByText(
+      render(<ConfirmationForm guests={guests} guestNumber={guestNumber} />);
+      await screen.findByText(
         "Kindly reply by 15th May 2021 to let us know if you’ll be able to make it."
       );
     });
 
-    it("has the first name in the form", () => {
-      component.findByText("Jack Harper");
+    it("has the first name in the form & initial options", async () => {
+      await screen.findByText("Jack", { exact: false });
+      attending = screen.getByLabelText("Yes");
+      notAttending = screen.getByLabelText("No");
+      quarantineDependent = screen.getByLabelText("Hopefully", {
+        exact: false,
+      });
+    });
+  });
+
+  describe("when a user selects attending or probably", () => {
+    let component, attending, notAttending, quarantineDependent;
+    beforeAll(async () => {
+      const guests = [{ id: 1, first_name: "Jack", last_name: "Harper" }];
+      const guestNumber = 0;
+      render(<ConfirmationForm guests={guests} guestNumber={guestNumber} />);
+      await screen.findByText(
+        "Kindly reply by 15th May 2021 to let us know if you’ll be able to make it."
+      );
+      fireEvent.click(screen.getByLabelText("Yes"));
     });
 
-    it("has 3 options for attendance", () => {
-      component.findByText("Yes");
-      component.findByText("No");
-      component.findByText(
-        "Hopefully, but I am travelling from overseas and if I need to quarantine I won’t be able to make it"
-      );
+    it("shows further options", async () => {
+      await screen.findByText("Dietary Requirements");
+      await screen.findByText("None");
     });
   });
 });
