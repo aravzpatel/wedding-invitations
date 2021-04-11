@@ -8,6 +8,9 @@ const ConfirmationForm = ({ guests, guestNumber }) => {
   const [isAttending, setAttending] = useState(null);
 
   const [dietaryRequirements, setDietaryRequirements] = useState(null);
+  const [otherDietRequirement, setOtherDietRequirement] = useState("");
+
+  console.log(otherDietRequirement);
 
   return (
     <div>
@@ -75,6 +78,47 @@ const ConfirmationForm = ({ guests, guestNumber }) => {
               onChange={setDietaryRequirements}
               state={dietaryRequirements}
             />
+            <RadioInput
+              label="Vegetarian"
+              value="vegetarian"
+              onChange={setDietaryRequirements}
+              state={dietaryRequirements}
+            />
+            <RadioInput
+              label="Vegan"
+              value="vegan"
+              onChange={setDietaryRequirements}
+              state={dietaryRequirements}
+            />
+            <RadioInput
+              label="Gluten Free"
+              value="gluten free"
+              onChange={setDietaryRequirements}
+              state={dietaryRequirements}
+            />
+            <RadioInput
+              label="Lactose Free"
+              value="lactose free"
+              onChange={setDietaryRequirements}
+              state={dietaryRequirements}
+            />
+            <label>
+              <input
+                type="radio"
+                value={dietaryRequirements === "other"}
+                checked={dietaryRequirements === "other"}
+                onChange={() => setDietaryRequirements("other")}
+              />
+              Other
+              {dietaryRequirements === "other" && (
+                <input
+                  type="text"
+                  value={otherDietRequirement}
+                  placeholder="Enter here"
+                  onChange={(e) => setOtherDietRequirement(e.target.value)}
+                />
+              )}
+            </label>
           </>
         )}
       </form>
@@ -89,7 +133,7 @@ const RadioInput = ({ label, value, state, onChange }) => {
         type="radio"
         value={state === value}
         checked={state === value}
-        onChange={onChange}
+        onChange={() => onChange(value)}
       />
       {label}
     </label>

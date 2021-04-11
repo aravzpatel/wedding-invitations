@@ -35,7 +35,7 @@ describe("When a user reaches the confirmation form", () => {
   });
 
   describe("when a user selects attending or probably", () => {
-    let component, attending, notAttending, quarantineDependent;
+    let vegetarian;
     beforeAll(async () => {
       const guests = [{ id: 1, first_name: "Jack", last_name: "Harper" }];
       const guestNumber = 0;
@@ -49,6 +49,11 @@ describe("When a user reaches the confirmation form", () => {
     it("shows further options", async () => {
       await screen.findByText("Dietary Requirements");
       await screen.findByText("None");
+      await screen.findByText("Vegetarian");
+      await screen.findByText("Vegan");
+      await screen.findByText("Gluten Free");
+      await screen.findByText("Lactose Free");
+      await screen.findByText("Other");
     });
   });
 });
