@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const ConfirmationForm = ({ guests, guestNumber }) => {
+const ConfirmationForm = ({ guests, guestNumber, onSubmit }) => {
   const [isAttendingWedding, setAttending] = useState(null);
   const [isAttendingSunday, setAttendingSunday] = useState(null);
   const [dietaryRequirements, setDietaryRequirements] = useState(null);
@@ -34,9 +34,11 @@ const ConfirmationForm = ({ guests, guestNumber }) => {
         confirmation: isAttendingWedding,
         sunday: isAttendingSunday,
         diet: dietaryRequirements,
+        otherDiet: otherDietRequirement,
       })
       .then((response) => {
         console.log(response);
+        onSubmit();
       }),
       (error) => {
         console.log(error);

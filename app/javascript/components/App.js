@@ -88,6 +88,8 @@ class App extends React.Component {
       );
     }
 
+    console.log(this.state.completedRSVP);
+
     return (
       <Container>
         <div className="form-container">
