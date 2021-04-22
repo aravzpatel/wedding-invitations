@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const WeddingRegistry = ({ guests, RSVPYes, onViewDetails }) => {
+const WeddingRegistry = ({ RSVPYes, onViewDetails }) => {
   const openRegistery = () => {
     window.open("https://google.com", "_blank");
   };
@@ -9,7 +9,7 @@ const WeddingRegistry = ({ guests, RSVPYes, onViewDetails }) => {
   return (
     <div>
       <h1>Thank you for confirming</h1>
-      {guests.length === RSVPYes && (
+      {RSVPYes > 0 && (
         <>
           <h3>We're delighted you can make it</h3>
           <button type="button" onClick={onViewDetails}>

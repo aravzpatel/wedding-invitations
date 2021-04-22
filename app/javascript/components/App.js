@@ -79,7 +79,6 @@ class App extends React.Component {
       weddingRegistry = (
         <div>
           <WeddingRegistry
-            guests={this.props.guests}
             RSVPYes={this.props.RSVPYes}
             onViewDetails={this.onViewDetails}
           />
