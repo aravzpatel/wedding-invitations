@@ -17,6 +17,13 @@ const WeddingRegistry = ({ guests, RSVPYes, onViewDetails }) => {
           </button>
         </>
       )}
+
+      {RSVPYes === 0 && (
+        <>
+          <h3>We're sorry that you can't make it.</h3>
+          <h4>We look forward to celebrating with you at a later date.</h4>
+        </>
+      )}
       <button type="button" onClick={openRegistery}>
         Thinking of buying a gift?
       </button>
