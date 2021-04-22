@@ -65,9 +65,9 @@ const ConfirmationForm = ({ guests, guestNumber, onSubmit }) => {
           Kindly reply by 15th May 2021 to let us know if you’ll be able to make
           it.
         </h1>
-        <h3>
-          {guests[guestNumber].first_name + " " + guests[guestNumber].last_name}
-        </h3>
+        {guests.map((guest) => {
+          return <h3>{guest.first_name + " " + guest.last_name}</h3>;
+        })}
       </div>
 
       <form onSubmit={handleSubmit}>
