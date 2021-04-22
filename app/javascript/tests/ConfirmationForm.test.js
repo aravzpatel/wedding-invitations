@@ -1,6 +1,3 @@
-//build form component so that has a form with one input
-//test that when submit it calls the right end point
-
 import ConfirmationForm from "../components/ConfirmationForm";
 import {
   findByTestId,
@@ -65,30 +62,6 @@ describe("When a user reaches the confirmation form", () => {
         exact: false,
       });
       expect(quarantineDependent.length).toEqual(2);
-    });
-  });
-
-  describe("when a user submits a form", () => {
-    beforeAll(async () => {
-      const guests = [{ id: 1, first_name: "Jack", last_name: "Harper" }];
-      const guestNumber = 0;
-      render(<ConfirmationForm guests={guests} guestNumber={guestNumber} />);
-      await screen.findByText(
-        "Kindly reply by 15th May 2021 to let us know if you’ll be able to make it."
-      );
-      fireEvent.click(screen.getByLabelText("Yes"));
-      await screen.findByText("Dietary Requirements");
-      fireEvent.click(screen.getByLabelText("Lactose Free"));
-      const allYesInputs = screen.getAllByLabelText("Yes");
-      fireEvent.click(allYesInputs[1]);
-    });
-
-    jest.mock("axios");
-
-    it("makes a request to the backend", async () => {
-      fireEvent.click(screen.getByText("Submit"));
-      axios.post = jest.fn().mockResolvedValue({ status: 201 });
-      await expect(axios.post).toHaveBeenCalledTimes(1);
     });
   });
 });

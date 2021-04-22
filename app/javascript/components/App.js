@@ -13,12 +13,13 @@ class App extends React.Component {
       displayWelcome: true,
       completedRSVP: 0,
       numberGuests: this.props.guests.length,
-      completeAddress: false,
+      viewDetails: false,
+      RSVPYes: 0,
     };
 
     this.changeView = this.changeView.bind(this);
     this.onRSVPSubmit = this.onRSVPSubmit.bind(this);
-    this.onAddressSubmit = this.onAddressSubmit.bind(this);
+    this.onViewDetails = this.onViewDetails.bind(this);
   }
 
   changeView() {
@@ -33,15 +34,21 @@ class App extends React.Component {
     });
   }
 
-  onAddressSubmit() {
+  rsvpYes() {
     this.setState({
-      completeAddress: true,
+      completedRSVP: this.state.completedRSVP + 1,
+    });
+  }
+
+  onViewDetails() {
+    this.setState({
+      viewDetails: true,
     });
   }
 
   render() {
     let form = null;
-    let address = null;
+    let weddingRegistry = null;
     let thankyou = null;
 
     let artwork = (
@@ -69,18 +76,19 @@ class App extends React.Component {
 
     if (this.state.completedRSVP === this.state.numberGuests) {
       form = null;
-      address = (
+      weddingRegistry = (
         <div>
-          <AddressForm
-            party={this.props.party}
-            onSubmit={this.onAddressSubmit}
+          <WeddingRegistry
+            guests={this.props.guests}
+            RSVPYes={this.props.RSVPYes}
+            onViewDetails={this.onViewDetails}
           />
         </div>
       );
     }
 
-    if (this.state.completeAddress === true) {
-      address = null;
+    if (this.state.viewDetails === true) {
+      weddingRegistry = null;
       thankyou = (
         <div>
           <Thankyou />
@@ -95,7 +103,7 @@ class App extends React.Component {
         <div className="form-container">
           {artwork}
           {form}
-          {address}
+          {weddingRegistry}
           {thankyou}
         </div>
       </Container>
