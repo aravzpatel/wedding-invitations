@@ -90,7 +90,7 @@ class App extends React.Component {
       weddingRegistry = null;
       thankyou = (
         <div>
-          <Thankyou />
+          <Details />
         </div>
       );
     }
