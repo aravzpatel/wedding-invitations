@@ -1,30 +1,45 @@
 import React from "react";
 import Artwork from "./Artwork";
-import RsvPform from "./RsvpForm";
-import AddressForm from "./AddressForm";
-import Container from "react-bootstrap/Container";
-import Thankyou from "./Thankyou";
 import ConfirmationForm from "./ConfirmationForm";
+import { Toolbar } from "@material-ui/core";
+import Details from "./Details";
+import WeddingRegistry from "./WeddingRegistry";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       displayWelcome: true,
+      displayConfirmationForm: false,
+      displayDetails: false,
+      displayGifts: false,
       completedRSVP: 0,
       numberGuests: this.props.guests.length,
-      viewDetails: false,
       RSVPYes: 0,
     };
 
-    this.changeView = this.changeView.bind(this);
+    this.renderHomepage = this.renderHomepage.bind(this);
     this.onRSVPSubmit = this.onRSVPSubmit.bind(this);
     this.onViewDetails = this.onViewDetails.bind(this);
+    this.renderForm = this.renderForm.bind(this);
+    this.renderGifts = this.renderGifts.bind(this);
   }
 
-  changeView() {
+  renderHomepage() {
+    this.setState({
+      displayWelcome: true,
+      displayConfirmationForm: false,
+      displayDetails: false,
+      displayGifts: false,
+    });
+  }
+
+  renderForm() {
     this.setState({
       displayWelcome: false,
+      displayConfirmationForm: true,
+      displayDetails: false,
+      displayGifts: false,
     });
   }
 
@@ -42,70 +57,52 @@ class App extends React.Component {
 
   onViewDetails() {
     this.setState({
-      viewDetails: true,
+      displayWelcome: false,
+      displayConfirmationForm: false,
+      displayDetails: true,
+      displayGifts: false,
+    });
+  }
+
+  renderGifts() {
+    this.setState({
+      displayWelcome: false,
+      displayConfirmationForm: false,
+      displayDetails: false,
+      displayGifts: true,
     });
   }
 
   render() {
-    let form = null;
-    let weddingRegistry = null;
-    let thankyou = null;
-
-    let artwork = (
-      <div>
-        <Artwork
-          onClick={this.changeView}
-          guests={this.props.guests}
-          submitted={this.props.submitted}
-        />
-      </div>
-    );
-
-    if (this.state.displayWelcome === false) {
-      artwork = null;
-      form = (
-        <div>
-          <ConfirmationForm
-            guests={this.props.guests}
-            guestNumber={this.state.completedRSVP}
-            onSubmit={this.onRSVPSubmit}
-          />
-        </div>
-      );
-    }
-
-    if (this.state.completedRSVP === this.state.numberGuests) {
-      form = null;
-      weddingRegistry = (
-        <div>
-          <WeddingRegistry
-            RSVPYes={this.props.RSVPYes}
-            onViewDetails={this.onViewDetails}
-          />
-        </div>
-      );
-    }
-
-    if (this.state.viewDetails === true) {
-      weddingRegistry = null;
-      thankyou = (
-        <div>
-          <Details />
-        </div>
-      );
-    }
-
-    console.log(this.state.completedRSVP);
-
     return (
-      <Container>
+      <>
+        <Toolbar>
+          <button onClick={this.renderForm}>RSVP</button>
+          <button onClick={this.onViewDetails}>Details</button>
+          <button onClick={this.renderGifts}>Gifts</button>
+        </Toolbar>
         <div className="form-container">
-          {artwork}
-          {form}
-          {weddingRegistry}
-          {thankyou}
+          {this.state.displayWelcome && (
+            <Artwork
+              onClick={this.renderForm}
+              guests={this.props.guests}
+              submitted={this.props.submitted}
+            />
+          )}
+          {this.state.displayConfirmationForm && (
+            <>
+              {console.log("hey")}
+              <ConfirmationForm
+                guests={this.props.guests}
+                guestNumber={this.state.completedRSVP}
+                onSubmit={this.onRSVPSubmit}
+              />
+            </>
+          )}
+          {this.state.displayDetails && <Details />}
+          {this.state.displayGifts && <WeddingRegistry />}
         </div>
-      </Container>
+      </>
     );
   }
 }
