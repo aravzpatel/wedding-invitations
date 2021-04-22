@@ -1,7 +1,4 @@
-import React, { useState, useRef } from "react";
-import Form from "react-bootstrap/Form";
-import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
+import React, { useState } from "react";
 import axios from "axios";
 
 const ConfirmationForm = ({ guests, guestNumber }) => {
@@ -28,6 +25,27 @@ const ConfirmationForm = ({ guests, guestNumber }) => {
         "Hopefully, but I am travelling from overseas and if I need to quarantine I won’t be able to make it",
     },
   ];
+
+  const handleSubmit = (event) => {
+    const data = new FormData(event.target);
+    axios
+      .put("/guests", {
+        id: guests[guestNumber].id,
+        confirmation: isAttendingWedding,
+        sunday: isAttendingSunday,
+        diet: dietaryRequirements,
+      })
+      .then((response) => {
+        console.log(response);
+      }),
+      (error) => {
+        console.log(error);
+      };
+    event.preventDefault();
+  };
+
+  console.log(guests);
+
   return (
     <div>
       <div>
@@ -40,7 +58,7 @@ const ConfirmationForm = ({ guests, guestNumber }) => {
         </h3>
       </div>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <h2>Saturday 17th July, The Master Shipwrights House</h2>
         <p>Ceremony & Celebration</p>
         <p>Event Attendance</p>
@@ -48,6 +66,7 @@ const ConfirmationForm = ({ guests, guestNumber }) => {
           state={isAttendingWedding}
           onChange={setAttending}
           options={attendingOptions}
+          id="saturday"
         />
         {isAttendingWedding && (
           <>
@@ -58,6 +77,7 @@ const ConfirmationForm = ({ guests, guestNumber }) => {
               otherState={otherDietRequirement}
               otherOnChange={setOtherDietRequirement}
               options={dietaryOptions}
+              id="diet"
             />
             <h2>Sunday 18th July, The Dog and Bell pub</h2>
             <p>Hog Roast</p>
@@ -65,9 +85,11 @@ const ConfirmationForm = ({ guests, guestNumber }) => {
               state={isAttendingSunday}
               onChange={setAttendingSunday}
               options={attendingOptions}
+              id="sunday"
             />
           </>
         )}
+        {isAttendingWedding !== null && <input type="submit" value="Submit" />}
       </form>
     </div>
   );
@@ -93,10 +115,12 @@ const RadioGroup = ({
   otherState,
   otherOnChange,
   options,
+  id,
 }) => {
   return options.map((option) => {
+    const specificID = `${id}_${option.value}`;
     return (
-      <div key={option.value}>
+      <div key={specificID}>
         <RadioInput
           label={option.label}
           value={option.value}

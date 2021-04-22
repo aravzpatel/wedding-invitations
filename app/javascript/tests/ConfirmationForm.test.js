@@ -11,6 +11,7 @@ import {
   getByLabelText,
 } from "@testing-library/react";
 import React from "react";
+import axios from "axios";
 
 describe("When a user reaches the confirmation form", () => {
   describe("when a user submits the form", () => {
@@ -64,6 +65,30 @@ describe("When a user reaches the confirmation form", () => {
         exact: false,
       });
       expect(quarantineDependent.length).toEqual(2);
+    });
+  });
+
+  describe("when a user submits a form", () => {
+    beforeAll(async () => {
+      const guests = [{ id: 1, first_name: "Jack", last_name: "Harper" }];
+      const guestNumber = 0;
+      render(<ConfirmationForm guests={guests} guestNumber={guestNumber} />);
+      await screen.findByText(
+        "Kindly reply by 15th May 2021 to let us know if you’ll be able to make it."
+      );
+      fireEvent.click(screen.getByLabelText("Yes"));
+      await screen.findByText("Dietary Requirements");
+      fireEvent.click(screen.getByLabelText("Lactose Free"));
+      const allYesInputs = screen.getAllByLabelText("Yes");
+      fireEvent.click(allYesInputs[1]);
+    });
+
+    jest.mock("axios");
+
+    it("makes a request to the backend", async () => {
+      fireEvent.click(screen.getByText("Submit"));
+      axios.post = jest.fn().mockResolvedValue({ status: 201 });
+      await expect(axios.post).toHaveBeenCalledTimes(1);
     });
   });
 });
