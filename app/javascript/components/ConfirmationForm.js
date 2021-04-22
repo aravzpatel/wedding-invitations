@@ -18,12 +18,12 @@ const ConfirmationForm = ({ guests, guestNumber, onSubmit }) => {
 
   const attendingOptions = [
     { value: true, label: "Yes" },
-    { value: false, label: "No" },
     {
       value: "quarantine",
       label:
         "Hopefully, but I am travelling from overseas and if I need to quarantine I won’t be able to make it",
     },
+    { value: false, label: "No" },
   ];
 
   const handleSubmit = (event) => {
@@ -34,11 +34,15 @@ const ConfirmationForm = ({ guests, guestNumber, onSubmit }) => {
         confirmation: isAttendingWedding,
         sunday: isAttendingSunday,
         diet: dietaryRequirements,
-        otherDiet: otherDietRequirement,
+        otherdiet: otherDietRequirement,
       })
       .then((response) => {
         console.log(response);
         onSubmit();
+        setAttending(null);
+        setAttendingSunday(null);
+        setDietaryRequirements(null);
+        setOtherDietRequirement(null);
       }),
       (error) => {
         console.log(error);
@@ -47,6 +51,12 @@ const ConfirmationForm = ({ guests, guestNumber, onSubmit }) => {
   };
 
   console.log(guests);
+  console.log(
+    isAttendingSunday,
+    isAttendingWedding,
+    dietaryRequirements,
+    otherDietRequirement
+  );
 
   return (
     <div>
