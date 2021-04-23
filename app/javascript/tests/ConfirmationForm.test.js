@@ -10,7 +10,7 @@ import {
 import React from "react";
 import axios from "axios";
 
-describe("When a user reaches the confirmation form", () => {
+describe("When a user reaches the confirmation form -", () => {
   describe("when a user submits the form", () => {
     let component, attending, notAttending, quarantineDependent;
     beforeAll(async () => {
