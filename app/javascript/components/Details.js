@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const Details = () => {
-  console.log("details get");
   return (
     <div>
       <div>
