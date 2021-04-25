@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Thankyou component renders without an rsvp button 1`] = `
-<img
-  alt="Image"
-  className="img-fluid"
-  src="ArtworkMock"
-/>
-`;
