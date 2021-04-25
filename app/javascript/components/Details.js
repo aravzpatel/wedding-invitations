@@ -33,6 +33,16 @@ const Details = () => {
         <p>Boat: Greenwich Pier (20 mins walk)</p>
         <p>By Car: Free parking on Watergate Street</p>
       </div>
+      <div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2375.1406976999137!2d-0.027755353644098753!3d51.483869555283334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487602f29d42d8fb%3A0x7cc76a93a88cb10e!2sMaster%20Shipwright&#39;s%20Palace!5e0!3m2!1sen!2suk!4v1619373354510!5m2!1sen!2suk"
+          width="600"
+          height="450"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
     </div>
   );
 };
