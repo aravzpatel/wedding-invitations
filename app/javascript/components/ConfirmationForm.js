@@ -50,8 +50,6 @@ const ConfirmationForm = ({ guests, guestNumber, onSubmit }) => {
     event.preventDefault();
   };
 
-  console.log(document.getElementById(`${guests[guestNumber].first_name}`));
-  console.log(`${guests[guestNumber].first_name}`);
   return (
     <div>
       <div>

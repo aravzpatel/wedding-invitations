@@ -1,13 +1,13 @@
 {
-  "application.js": "/packs/js/application-9193c3f1c58080262915.js",
-  "application.js.map": "/packs/js/application-9193c3f1c58080262915.js.map",
+  "application.js": "/packs/js/application-e4906609c050ac2fd856.js",
+  "application.js.map": "/packs/js/application-e4906609c050ac2fd856.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-9193c3f1c58080262915.js"
+        "/packs/js/application-e4906609c050ac2fd856.js"
       ],
       "js.map": [
-        "/packs/js/application-9193c3f1c58080262915.js.map"
+        "/packs/js/application-e4906609c050ac2fd856.js.map"
       ]
     },
     "hello_react": {
@@ -20,10 +20,10 @@
     },
     "server_rendering": {
       "js": [
-        "/packs/js/server_rendering-a1825cffb057aeeb7578.js"
+        "/packs/js/server_rendering-8076ea3076dc157b6b4a.js"
       ],
       "js.map": [
-        "/packs/js/server_rendering-a1825cffb057aeeb7578.js.map"
+        "/packs/js/server_rendering-8076ea3076dc157b6b4a.js.map"
       ]
     }
   },
@@ -32,6 +32,6 @@
   "media/images/Thankyou.svg": "/packs/media/images/Thankyou-2a30c429.svg",
   "media/images/celebrate.svg": "/packs/media/images/celebrate-256d0f33.svg",
   "media/images/icon.png": "/packs/media/images/icon-74f85a4e.png",
-  "server_rendering.js": "/packs/js/server_rendering-a1825cffb057aeeb7578.js",
-  "server_rendering.js.map": "/packs/js/server_rendering-a1825cffb057aeeb7578.js.map"
+  "server_rendering.js": "/packs/js/server_rendering-8076ea3076dc157b6b4a.js",
+  "server_rendering.js.map": "/packs/js/server_rendering-8076ea3076dc157b6b4a.js.map"
 }
