@@ -102,11 +102,21 @@ body {
 }
 
 .toolbar {
-  flex-flow: row-reverse;
+  flex-flow: row;
+  border-bottom: 1px solid #fdae66;
+  margin-bottom: 50px;
+}
+
+.toolbar-image {
+  flex-grow: 4;
 }
 
 .toolbar-button {
   width: 15%;
   margin-right: 1px;
   border: none;
+}
+
+.toolbar-icon {
+  max-width: 40px;
 }

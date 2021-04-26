@@ -4,6 +4,7 @@ import ConfirmationForm from "./ConfirmationForm";
 import { Toolbar } from "@material-ui/core";
 import Details from "./Details";
 import WeddingRegistry from "./WeddingRegistry";
+import Icon from "../../assets/images/icon.png";
 
 class App extends React.Component {
   constructor(props) {
@@ -95,6 +96,15 @@ class App extends React.Component {
       <>
         <div className="form-container">
           <Toolbar className="toolbar">
+            <div className="toolbar-image">
+              <input
+                className="toolbar-icon"
+                type="image"
+                src={Icon}
+                onClick={this.renderHomepage}
+              />
+            </div>
+
             {this.state.completedRSVP < this.props.guests.length && (
               <button className="toolbar-button" onClick={this.renderForm}>
                 RSVP

@@ -25,8 +25,6 @@ class Artwork extends React.Component {
   }
 
   render() {
-    console.log("artwork", this.props.submitted < this.props.guests.length);
-    console.log("check", this.props.submitted, this.props.guests.length);
     return <div>{this.loadArtwork()}</div>;
   }
 }
