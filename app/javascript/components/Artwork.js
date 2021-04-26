@@ -1,5 +1,5 @@
 import React from "react";
-import WelcomeImage from "../../assets/images/Invite.svg";
+import WelcomeImage from "../../assets/images/celebrate.svg";
 import Image from "react-bootstrap/Image";
 import Welcome from "./Welcome";
 
