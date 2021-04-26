@@ -16,6 +16,7 @@ class App extends React.Component {
       completedRSVP: 0,
       numberGuests: this.props.guests.length,
       RSVPYes: 0,
+      fromHomepage: false,
     };
 
     this.renderHomepage = this.renderHomepage.bind(this);
@@ -23,6 +24,7 @@ class App extends React.Component {
     this.onViewDetails = this.onViewDetails.bind(this);
     this.renderForm = this.renderForm.bind(this);
     this.renderGifts = this.renderGifts.bind(this);
+    this.setFromHomepage = this.setFromHomepage.bind(this);
   }
 
   renderHomepage() {
@@ -73,15 +75,29 @@ class App extends React.Component {
     });
   }
 
+  setFromHomepage() {
+    this.setState({
+      fromHomepage: true,
+    });
+  }
+
   render() {
     return (
       <>
-        <Toolbar>
-          <button onClick={this.renderForm}>RSVP</button>
-          <button onClick={this.onViewDetails}>Details</button>
-          <button onClick={this.renderGifts}>Gifts</button>
-        </Toolbar>
         <div className="form-container">
+          <Toolbar>
+            <button onClick={this.renderForm}>RSVP</button>
+            <button onClick={this.onViewDetails}>Details</button>
+            <button
+              onClick={() => {
+                this.renderGifts();
+                this.setFromHomepage();
+                console.log("???");
+              }}
+            >
+              Gifts
+            </button>
+          </Toolbar>
           {this.state.displayWelcome && (
             <Artwork
               onClick={this.renderForm}
@@ -91,16 +107,24 @@ class App extends React.Component {
           )}
           {this.state.displayConfirmationForm && (
             <>
-              {console.log("hey")}
               <ConfirmationForm
                 guests={this.props.guests}
                 guestNumber={this.state.completedRSVP}
-                onSubmit={this.onRSVPSubmit}
+                onSubmit={() => {
+                  this.onRSVPSubmit();
+                  this.renderGifts();
+                }}
               />
             </>
           )}
           {this.state.displayDetails && <Details />}
-          {this.state.displayGifts && <WeddingRegistry />}
+          {this.state.displayGifts && (
+            <WeddingRegistry
+              fromHomepage={this.state.fromHomepage}
+              RSVPYes={this.state.RSVPYes}
+              onViewDetails={this.onViewDetails}
+            />
+          )}
         </div>
       </>
     );
