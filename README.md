@@ -97,6 +97,5 @@ _The frontend components are:_
 # TBC
 
 5. add link to gift registry -> need
-6. make gift registry dumb if come from homepage //
-7. prevent re-entering confirmation form //
-8. style
+6. prevent re-entering confirmation form //
+7. style

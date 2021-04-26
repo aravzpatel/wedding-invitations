@@ -50,13 +50,7 @@ const ConfirmationForm = ({ guests, guestNumber, onSubmit }) => {
     event.preventDefault();
   };
 
-  console.log(guests);
-  console.log(
-    isAttendingSunday,
-    isAttendingWedding,
-    dietaryRequirements,
-    otherDietRequirement
-  );
+  console.log(guests[guestNumber]);
 
   return (
     <div>

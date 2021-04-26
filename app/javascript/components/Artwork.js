@@ -4,35 +4,30 @@ import Image from "react-bootstrap/Image";
 import Welcome from "./Welcome";
 
 class Artwork extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
-    this.loadArtwork=this.loadArtwork.bind(this);
+    this.loadArtwork = this.loadArtwork.bind(this);
   }
 
-  loadArtwork(){
+  loadArtwork() {
     return (
       <div className="artwork-container">
-        <Image 
-          src={WelcomeImage} 
-          alt="Image" 
-          fluid
-        />
+        <Image src={WelcomeImage} alt="Image" fluid />
         {this.props.submitted < this.props.guests.length ? (
-          <button className="submit" onClick={this.props.onClick}>RSVP</button>
-        ) : null
-        }
-        <Welcome guests={this.props.guests}/>
+          <button className="submit" onClick={this.props.onClick}>
+            RSVP
+          </button>
+        ) : null}
+        <Welcome guests={this.props.guests} />
       </div>
     );
   }
-  
-  render () {
-    return (
-      <div>
-        {this.loadArtwork()}
-      </div>
-    );
+
+  render() {
+    console.log("artwork", this.props.submitted < this.props.guests.length);
+    console.log("check", this.props.submitted, this.props.guests.length);
+    return <div>{this.loadArtwork()}</div>;
   }
 }
 

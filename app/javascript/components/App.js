@@ -13,7 +13,7 @@ class App extends React.Component {
       displayConfirmationForm: false,
       displayDetails: false,
       displayGifts: false,
-      completedRSVP: 0,
+      completedRSVP: this.props.submitted,
       numberGuests: this.props.guests.length,
       RSVPYes: 0,
       fromHomepage: false,
@@ -25,6 +25,7 @@ class App extends React.Component {
     this.renderForm = this.renderForm.bind(this);
     this.renderGifts = this.renderGifts.bind(this);
     this.setFromHomepage = this.setFromHomepage.bind(this);
+    this.endForm = this.endForm.bind(this);
   }
 
   renderHomepage() {
@@ -43,6 +44,12 @@ class App extends React.Component {
       displayDetails: false,
       displayGifts: false,
     });
+  }
+
+  endForm() {
+    if (this.state.completedRSVP === this.props.guests.length) {
+      this.renderGifts();
+    }
   }
 
   onRSVPSubmit() {
@@ -82,17 +89,20 @@ class App extends React.Component {
   }
 
   render() {
+    console.log("submitted", this.props.submitted);
+
     return (
       <>
         <div className="form-container">
           <Toolbar>
-            <button onClick={this.renderForm}>RSVP</button>
+            {this.state.completedRSVP < this.props.guests.length && (
+              <button onClick={this.renderForm}>RSVP</button>
+            )}
             <button onClick={this.onViewDetails}>Details</button>
             <button
               onClick={() => {
                 this.renderGifts();
                 this.setFromHomepage();
-                console.log("???");
               }}
             >
               Gifts
@@ -102,7 +112,7 @@ class App extends React.Component {
             <Artwork
               onClick={this.renderForm}
               guests={this.props.guests}
-              submitted={this.props.submitted}
+              submitted={this.state.completedRSVP}
             />
           )}
           {this.state.displayConfirmationForm && (
@@ -112,7 +122,7 @@ class App extends React.Component {
                 guestNumber={this.state.completedRSVP}
                 onSubmit={() => {
                   this.onRSVPSubmit();
-                  this.renderGifts();
+                  this.endForm();
                 }}
               />
             </>
