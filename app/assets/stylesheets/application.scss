@@ -12,73 +12,73 @@
  *
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
- @import url("https://fonts.googleapis.com/css2?family=Hind:wght@500&display=swap");
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@500&display=swap");
 
-body{
-  background-color: #FFFAF8
+body {
+  background-color: #fffaf8;
 }
 
-
-.form-container{
+.form-container {
   max-width: 650px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  background-color: #FFFAF8;
+  background-color: #fffaf8;
   padding-top: 2.5%;
 }
 
-.artwork-container{
+.artwork-container {
   position: relative;
 }
 
-.img-fluid{
+.img-fluid {
   margin: auto;
   width: 100%;
   vertical-align: middle;
 }
 
-.welcome-greeting{
+.welcome-greeting {
   position: absolute;
   top: 1%;
   left: 3.5%;
-  font-family: 'Hind', sans-serif;
-  font-size: 16px
+  font-family: "Hind", sans-serif;
+  font-size: 16px;
 }
 
-@media (min-width: 768px){
-  .welcome-greeting{
+@media (min-width: 768px) {
+  .welcome-greeting {
     font-size: 30px;
   }
 }
 
-.submit, .rsvp-button{
+.submit,
+.rsvp-button,
+.toolbar-button {
   width: 89px;
   height: 45px;
-  border: 2px solid #FD6666;
+  border: 2px solid #fd6666;
   box-sizing: border-box;
   border-radius: 25px;
-  background-color: #FFFAF8;
-  font-family: 'Hind', sans-serif;
-  color: #FD6666;
+  background-color: #fffaf8;
+  font-family: "Hind", sans-serif;
+  color: #fd6666;
   font-weight: bold;
   font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (760 - 300)));
 }
 
-.submit:hover{
-  background-color: #FD6666;
-  color: #FFFAF8;
+.submit:hover {
+  background-color: #fd6666;
+  color: #fffaf8;
 }
 
-.rsvp-button:hover{
-  background-color: #FD6666;
-  color: #FFFAF8;
-  border: 2px solid #FD6666;
+.rsvp-button:hover,
+.toolbar-button:hover {
+  background-color: #fd6666;
+  color: #fffaf8;
+  border: 2px solid #fd6666;
 }
-
-
 
 .submit {
   position: absolute;
@@ -86,18 +86,27 @@ body{
   right: 2%;
 }
 
-
-.form{
+.form {
   margin: 0 auto;
   width: 70%;
   text-align: center;
 }
 
-.header{
+.header {
   text-align: left;
-  font-family: 'Hind', sans-serif;
+  font-family: "Hind", sans-serif;
   font-weight: bold;
   font-size: 18px;
-  padding-top:1em;
+  padding-top: 1em;
   padding-bottom: 1em;
+}
+
+.toolbar {
+  flex-flow: row-reverse;
+}
+
+.toolbar-button {
+  width: 15%;
+  margin-right: 1px;
+  border: none;
 }

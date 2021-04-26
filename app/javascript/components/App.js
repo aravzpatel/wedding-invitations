@@ -60,7 +60,7 @@ class App extends React.Component {
 
   rsvpYes() {
     this.setState({
-      completedRSVP: this.state.completedRSVP + 1,
+      RSVPYes: this.state.RSVPYes + 1,
     });
   }
 
@@ -94,12 +94,17 @@ class App extends React.Component {
     return (
       <>
         <div className="form-container">
-          <Toolbar>
+          <Toolbar className="toolbar">
             {this.state.completedRSVP < this.props.guests.length && (
-              <button onClick={this.renderForm}>RSVP</button>
+              <button className="toolbar-button" onClick={this.renderForm}>
+                RSVP
+              </button>
             )}
-            <button onClick={this.onViewDetails}>Details</button>
+            <button className="toolbar-button" onClick={this.onViewDetails}>
+              Details
+            </button>
             <button
+              className="toolbar-button"
               onClick={() => {
                 this.renderGifts();
                 this.setFromHomepage();
