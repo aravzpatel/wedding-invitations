@@ -8,29 +8,17 @@ const WeddingRegistry = ({ RSVPYes, onViewDetails, fromHomepage }) => {
 
   return (
     <div>
-      {!fromHomepage && <h1>Thank you for confirming</h1>}
-      {!fromHomepage && RSVPYes > 0 && (
-        <>
-          <h3>We're delighted you can make it</h3>
-          <button type="button" onClick={onViewDetails}>
-            View more details
-          </button>
-        </>
-      )}
-
-      {!fromHomepage && RSVPYes === 0 && (
-        <>
-          <h3>We're sorry that you can't make it.</h3>
-          <h4>We look forward to celebrating with you at a later date.</h4>
-        </>
-      )}
       <div>
-        <p>
-          You're presence is all that is needed, but if you want to give us
-          something think about making a donation or buying us a gift
+        <p className="gift-header">
+          You're presence is all that is needed, but if you want to we'd love a
+          donation to our future growth fund or buying us a gift
         </p>
-        <button type="button">Make a donation</button>
-        <button type="button" onClick={openRegistery}>
+      </div>
+      <div className="gift-button-wrapper">
+        <button type="button" className="gift-button">
+          Make a donation
+        </button>
+        <button type="button" onClick={openRegistery} className="gift-button">
           Thinking of buying a gift?
         </button>
       </div>

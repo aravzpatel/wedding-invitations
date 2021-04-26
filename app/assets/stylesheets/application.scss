@@ -153,11 +153,17 @@ body {
 .form-header,
 .form-title,
 .form-header-second,
-.form-header-second-bottom {
+.form-header-second-bottom,
+.gift-header {
   font-family: "Hind", sans-serif;
   font-size: 18px;
   color: #fd6666;
   font-weight: semi-bold;
+}
+
+.gift-header {
+  text-align: center;
+  color: black;
 }
 
 .form-title {
@@ -231,4 +237,42 @@ body {
 
 .form-sunday {
   padding-top: 10px;
+}
+
+.detail-header {
+  font-size: 20px;
+  font-weight: medium;
+}
+
+.detail-subcopy {
+  font-size: 16px;
+  color: #fd6666;
+}
+
+.detail-hog {
+  padding-top: 20px;
+}
+
+.gift-button {
+  height: 45px;
+  border: 2px solid #fd6666;
+  box-sizing: border-box;
+  border-radius: 25px;
+  background-color: #fffaf8;
+  font-family: "Hind", sans-serif;
+  color: #fd6666;
+  font-weight: bold;
+  font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (760 - 300)));
+}
+
+.gift-button:hover {
+  background-color: #fd6666;
+  color: #fffaf8;
+  border: 2px solid #fd6666;
+}
+
+.gift-button-wrapper {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-around;
 }
