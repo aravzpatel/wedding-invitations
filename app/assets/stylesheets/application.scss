@@ -55,7 +55,8 @@ body {
 
 .submit,
 .rsvp-button,
-.toolbar-button {
+.toolbar-button,
+.form-submit {
   width: 89px;
   height: 45px;
   border: 2px solid #fd6666;
@@ -68,7 +69,8 @@ body {
   font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (760 - 300)));
 }
 
-.submit:hover {
+.submit:hover,
+.form-submit {
   background-color: #fd6666;
   color: #fffaf8;
 }
@@ -90,6 +92,14 @@ body {
   margin: 0 auto;
   width: 70%;
   text-align: center;
+}
+
+.form-submit {
+  text-align: center;
+}
+
+.form-submit-wrapper {
+  padding-top: 10px;
 }
 
 .header {
@@ -119,4 +129,106 @@ body {
 
 .toolbar-icon {
   max-width: 40px;
+}
+
+.confirmation-header {
+  font-size: 18px;
+  font-family: "Hind", sans-serif;
+}
+
+.confirmation-guests {
+  width: fit-content;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-family: "Hind", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.confirmation-wrapper {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.form-header,
+.form-title,
+.form-header-second,
+.form-header-second-bottom {
+  font-family: "Hind", sans-serif;
+  font-size: 18px;
+  color: #fd6666;
+  font-weight: semi-bold;
+}
+
+.form-title {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  color: black;
+}
+
+.form-header-second {
+  padding-top: 10px;
+}
+.form-header-second-bottom {
+  padding-bottom: 10px;
+}
+
+.radio-input {
+  width: 18px;
+  color: #fd6666;
+}
+
+.radio-input-container {
+  display: block;
+  position: relative;
+  padding-left: 40px;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-left: 20px;
+  font-weight: normal;
+}
+
+.radio-input-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.radio-input-container:hover input ~ .checkmark {
+  background-color: #fd6666;
+}
+
+.radio-input-container input:checked ~ .checkmark {
+  background-color: #fd6666;
+}
+
+.radio-input-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.form-second-section {
+  padding-top: 10px;
+}
+
+.form-sunday {
+  padding-top: 10px;
 }

@@ -50,24 +50,31 @@ const ConfirmationForm = ({ guests, guestNumber, onSubmit }) => {
     event.preventDefault();
   };
 
-  console.log(guests[guestNumber]);
-
+  console.log(document.getElementById(`${guests[guestNumber].first_name}`));
+  console.log(`${guests[guestNumber].first_name}`);
   return (
     <div>
       <div>
-        <h1>
+        <div className="confirmation-wrapper">
+          <div className="confirmation-guests">
+            {guests[guestNumber].first_name +
+              " " +
+              guests[guestNumber].last_name}
+          </div>
+        </div>
+
+        <p className="confirmation-header">
           Kindly reply by 15th May 2021 to let us know if you’ll be able to make
           it.
-        </h1>
-        {guests.map((guest) => {
-          return <h3>{guest.first_name + " " + guest.last_name}</h3>;
-        })}
+        </p>
       </div>
 
       <form onSubmit={handleSubmit}>
-        <h2>Saturday 17th July, The Master Shipwrights House</h2>
-        <p>Ceremony & Celebration</p>
-        <p>Event Attendance</p>
+        <div className="form-header">
+          Saturday 17th July, The Master Shipwrights House
+        </div>
+        <div className="form-header">Ceremony & Celebration</div>
+        <div className="form-title">Event Attendance</div>
         <RadioGroup
           state={isAttendingWedding}
           onChange={setAttending}
@@ -75,8 +82,9 @@ const ConfirmationForm = ({ guests, guestNumber, onSubmit }) => {
           id="saturday"
         />
         {isAttendingWedding && (
-          <>
-            <p>Dietary Requirements</p>
+          <div className="form-second-section">
+            <div className="form-title">Dietary Requirements</div>
+
             <RadioGroup
               state={dietaryRequirements}
               onChange={setDietaryRequirements}
@@ -85,17 +93,26 @@ const ConfirmationForm = ({ guests, guestNumber, onSubmit }) => {
               options={dietaryOptions}
               id="diet"
             />
-            <h2>Sunday 18th July, The Dog and Bell pub</h2>
-            <p>Hog Roast</p>
-            <RadioGroup
-              state={isAttendingSunday}
-              onChange={setAttendingSunday}
-              options={attendingOptions}
-              id="sunday"
-            />
-          </>
+            <div className="form-sunday">
+              <div className="form-header-second">
+                Sunday 18th July, The Dog & Bell pub
+              </div>
+              <div className="form-header-second-bottom">Hog Roast</div>
+
+              <RadioGroup
+                state={isAttendingSunday}
+                onChange={setAttendingSunday}
+                options={attendingOptions}
+                id="sunday"
+              />
+            </div>
+          </div>
         )}
-        {isAttendingWedding !== null && <input type="submit" value="Submit" />}
+        <div className="form-submit-wrapper">
+          {isAttendingWedding !== null && (
+            <input type="submit" value="Submit" className="form-submit" />
+          )}
+        </div>
       </form>
     </div>
   );
@@ -103,7 +120,7 @@ const ConfirmationForm = ({ guests, guestNumber, onSubmit }) => {
 
 const RadioInput = ({ label, value, state, onChange }) => {
   return (
-    <label>
+    <label className="radio-input-container">
       <input
         type="radio"
         value={value}
@@ -111,6 +128,7 @@ const RadioInput = ({ label, value, state, onChange }) => {
         onChange={() => onChange(value)}
       />
       {label}
+      <span className="checkmark"></span>
     </label>
   );
 };
