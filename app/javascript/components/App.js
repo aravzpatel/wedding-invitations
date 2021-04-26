@@ -4,6 +4,7 @@ import ConfirmationForm from "./ConfirmationForm";
 import { Toolbar } from "@material-ui/core";
 import Details from "./Details";
 import WeddingRegistry from "./WeddingRegistry";
+import Icon from "../../assets/images/icon.png";
 
 class App extends React.Component {
   constructor(props) {
@@ -13,9 +14,10 @@ class App extends React.Component {
       displayConfirmationForm: false,
       displayDetails: false,
       displayGifts: false,
-      completedRSVP: 0,
+      completedRSVP: this.props.submitted,
       numberGuests: this.props.guests.length,
       RSVPYes: 0,
+      fromHomepage: false,
     };
 
     this.renderHomepage = this.renderHomepage.bind(this);
@@ -23,6 +25,8 @@ class App extends React.Component {
     this.onViewDetails = this.onViewDetails.bind(this);
     this.renderForm = this.renderForm.bind(this);
     this.renderGifts = this.renderGifts.bind(this);
+    this.setFromHomepage = this.setFromHomepage.bind(this);
+    this.endForm = this.endForm.bind(this);
   }
 
   renderHomepage() {
@@ -43,6 +47,12 @@ class App extends React.Component {
     });
   }
 
+  endForm() {
+    if (this.state.completedRSVP === this.props.guests.length) {
+      this.renderGifts();
+    }
+  }
+
   onRSVPSubmit() {
     this.setState({
       completedRSVP: this.state.completedRSVP + 1,
@@ -51,7 +61,7 @@ class App extends React.Component {
 
   rsvpYes() {
     this.setState({
-      completedRSVP: this.state.completedRSVP + 1,
+      RSVPYes: this.state.RSVPYes + 1,
     });
   }
 
@@ -73,34 +83,73 @@ class App extends React.Component {
     });
   }
 
+  setFromHomepage() {
+    this.setState({
+      fromHomepage: true,
+    });
+  }
+
   render() {
+    console.log("submitted", this.props.submitted);
+
     return (
       <>
-        <Toolbar>
-          <button onClick={this.renderForm}>RSVP</button>
-          <button onClick={this.onViewDetails}>Details</button>
-          <button onClick={this.renderGifts}>Gifts</button>
-        </Toolbar>
         <div className="form-container">
+          <Toolbar className="toolbar">
+            <div className="toolbar-image">
+              <input
+                className="toolbar-icon"
+                type="image"
+                src={Icon}
+                onClick={this.renderHomepage}
+              />
+            </div>
+
+            {this.state.completedRSVP < this.props.guests.length && (
+              <button className="toolbar-button" onClick={this.renderForm}>
+                RSVP
+              </button>
+            )}
+            <button className="toolbar-button" onClick={this.onViewDetails}>
+              Details
+            </button>
+            <button
+              className="toolbar-button"
+              onClick={() => {
+                this.renderGifts();
+                this.setFromHomepage();
+              }}
+            >
+              Gifts
+            </button>
+          </Toolbar>
           {this.state.displayWelcome && (
             <Artwork
               onClick={this.renderForm}
               guests={this.props.guests}
-              submitted={this.props.submitted}
+              submitted={this.state.completedRSVP}
             />
           )}
           {this.state.displayConfirmationForm && (
             <>
-              {console.log("hey")}
               <ConfirmationForm
                 guests={this.props.guests}
                 guestNumber={this.state.completedRSVP}
-                onSubmit={this.onRSVPSubmit}
+                onSubmit={() => {
+                  this.onRSVPSubmit();
+                  this.endForm();
+                }}
               />
             </>
           )}
           {this.state.displayDetails && <Details />}
-          {this.state.displayGifts && <WeddingRegistry />}
+          {this.state.displayGifts && (
+            <WeddingRegistry
+              fromHomepage={this.state.fromHomepage}
+              RSVPYes={this.state.RSVPYes}
+              onViewDetails={this.onViewDetails}
+            />
+          )}
         </div>
       </>
     );
