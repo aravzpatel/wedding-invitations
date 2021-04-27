@@ -25,6 +25,7 @@ class App extends React.Component {
     this.onViewDetails = this.onViewDetails.bind(this);
     this.renderForm = this.renderForm.bind(this);
     this.renderGifts = this.renderGifts.bind(this);
+    this.renderGiftsWithThanks = this.renderGiftsWithThanks.bind(this);
     this.setFromHomepage = this.setFromHomepage.bind(this);
     this.endForm = this.endForm.bind(this);
   }
@@ -49,7 +50,7 @@ class App extends React.Component {
 
   endForm() {
     if (this.state.completedRSVP === this.props.guests.length) {
-      this.renderGifts();
+      this.renderGiftsWithThanks();
     }
   }
 
@@ -83,6 +84,13 @@ class App extends React.Component {
     });
   }
 
+  renderGiftsWithThanks() {
+    this.renderGifts();
+    this.setState({
+      thanks: true,
+    });
+  }
+
   setFromHomepage() {
     this.setState({
       fromHomepage: true,
@@ -90,8 +98,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("submitted", this.props.submitted);
-
     return (
       <>
         <div className="form-container">
@@ -106,7 +112,11 @@ class App extends React.Component {
             </div>
 
             {this.state.completedRSVP < this.props.guests.length && (
-              <button className="toolbar-button" onClick={this.renderForm}>
+              <button
+                className="toolbar-button"
+                data-status={this.state.displayConfirmationForm}
+                onClick={this.renderForm}
+              >
                 RSVP
               </button>
             )}
@@ -144,11 +154,7 @@ class App extends React.Component {
           )}
           {this.state.displayDetails && <Details />}
           {this.state.displayGifts && (
-            <WeddingRegistry
-              fromHomepage={this.state.fromHomepage}
-              RSVPYes={this.state.RSVPYes}
-              onViewDetails={this.onViewDetails}
-            />
+            <WeddingRegistry thanks={this.state.thanks} />
           )}
         </div>
       </>

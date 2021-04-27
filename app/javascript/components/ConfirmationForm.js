@@ -55,9 +55,10 @@ const ConfirmationForm = ({ guests, guestNumber, onSubmit }) => {
       <div>
         <div className="confirmation-wrapper">
           <div className="confirmation-guests">
-            {guests[guestNumber].first_name +
-              " " +
-              guests[guestNumber].last_name}
+            {guestNumber < guests.length &&
+              guests[guestNumber].first_name +
+                " " +
+                guests[guestNumber].last_name}
           </div>
         </div>
 
@@ -72,6 +73,7 @@ const ConfirmationForm = ({ guests, guestNumber, onSubmit }) => {
           Saturday 17th July, The Master Shipwrights House
         </div>
         <div className="form-header">Ceremony & Celebration</div>
+        <div className="form-header">11.30am Start</div>
         <div className="form-title">Event Attendance</div>
         <RadioGroup
           state={isAttendingWedding}
@@ -93,9 +95,12 @@ const ConfirmationForm = ({ guests, guestNumber, onSubmit }) => {
             />
             <div className="form-sunday">
               <div className="form-header-second">
-                Sunday 18th July, The Dog & Bell pub
+                Sunday 18th July, The Dog & Bell Pub
               </div>
-              <div className="form-header-second-bottom">Hog Roast</div>
+              <div className="form-header-second-bottom">
+                Hog Roast, Optional
+              </div>
+              <div className="form-header-second-bottom">From 1pm</div>
 
               <RadioGroup
                 state={isAttendingSunday}

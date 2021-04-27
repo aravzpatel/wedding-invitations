@@ -1,10 +1,15 @@
 import React from "react";
+import Couple from "../../assets/images/image.png";
+import Image from "react-bootstrap/Image";
 
 const Details = () => {
   return (
     <div>
       <div className="detail-container">
-        <div>
+        <div className="detail-image-wrapper">
+          <Image src={Couple} className="detail-image" />
+        </div>
+        <div className="detail-copy">
           <div className="detail-header">CEREMONY & CELEBRATION</div>
           <p className="detail-subcopy"> The main event</p>
           <p>
@@ -23,7 +28,7 @@ const Details = () => {
             <strong>End:</strong> 11 PM
           </p>
           <p>
-            <strong>Dress:</strong> Your best. Ditch the suit and come correct
+            <strong>Dress:</strong> Dress your best and come correct
           </p>
         </div>
         <div className="detail-hog">
@@ -56,13 +61,15 @@ const Details = () => {
           walk from our house
         </p>
         <p>
-          <strong>Train:</strong> Deptford train station (10 mins walk)
+          <strong>Train:</strong> Deptford train station (10 mins walk) New
+          Cross station (20 mins walk)
         </p>
         <p>
           <strong>Boat:</strong> Greenwich Pier (20 mins walk)
         </p>
         <p>
-          <strong>By Car:</strong> Free parking on Watergate Street
+          <strong>By Car:</strong> Free parking on Watergate Street & New King
+          Street
         </p>
       </div>
       <div className="map-wrapper">

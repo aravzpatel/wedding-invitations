@@ -21,7 +21,7 @@ body {
 }
 
 .form-container {
-  max-width: 650px;
+  max-width: 600px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -41,7 +41,7 @@ body {
 
 .welcome-greeting {
   position: absolute;
-  top: 3%;
+  top: 1%;
   left: 3.5%;
   font-family: "Hind", sans-serif;
   font-size: 16px;
@@ -55,7 +55,6 @@ body {
 
 .submit,
 .rsvp-button,
-.toolbar-button,
 .form-submit {
   width: 89px;
   height: 45px;
@@ -75,8 +74,7 @@ body {
   color: #fffaf8;
 }
 
-.rsvp-button:hover,
-.toolbar-button:hover {
+.rsvp-button:hover {
   background-color: #fd6666;
   color: #fffaf8;
   border: 2px solid #fd6666;
@@ -123,12 +121,37 @@ body {
 
 .toolbar-button {
   width: fit-content;
-  padding: 3px;
+  padding: 10px;
+  color: black;
+  background-color: #fffaf8;
   border: none;
+  font-size: 18px;
+  font-family: "Hind", sans-serif;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.toolbar-button:hover {
+  background: /* gradient can be an image */ linear-gradient(
+      to left,
+      #fd6666 0%,
+      #fdae66 40%,
+      #fdf766 100%
+    )
+    left bottom #fffaf8 no-repeat;
+  background-size: auto 7px; /* if linear-gradient, we need to resize it */
+}
+
+.toolbar-button:focus,
+.toolbar-button[data-status="true"] {
+  outline: none;
 }
 
 .toolbar-icon {
-  max-width: 40px;
+  width: 100%;
+  max-width: 30px;
+  height: auto;
+  outline: none;
 }
 
 .confirmation-header {
@@ -139,7 +162,6 @@ body {
 
 .confirmation-guests {
   width: fit-content;
-  padding-left: 1em;
   padding-right: 1em;
   font-family: "Hind", sans-serif;
   font-size: 18px;
@@ -261,6 +283,8 @@ body {
 }
 
 .detail-hog {
+  width: 50%;
+  padding: 10px;
   padding-top: 20px;
 }
 
@@ -271,19 +295,24 @@ body {
 }
 
 .detail-image-wrapper {
-  // text-align: right;
-  // position: absolute;
-  top: 15%;
+  text-align: right;
+  position: absolute;
+  width: fit-content;
+  top: 20%;
   float: right;
 }
 
 .detail-container {
-  // position: relative;
+  position: relative;
+}
+.detail-copy {
+  width: 50%;
+  padding: 10px;
 }
 
 .gift-button {
   width: fit-content;
-  height: 45px;
+  padding: 15px;
   border: 2px solid #fd6666;
   box-sizing: border-box;
   border-radius: 25px;
@@ -310,20 +339,11 @@ body {
   padding: 10px;
 }
 
-.rotate {
-  animation: rotation 5s infinite linear;
-}
-
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
-}
-
 .gift-logo {
   margin-top: 20px;
   text-align: center;
+}
+
+.rotate {
+  width: 60%;
 }
