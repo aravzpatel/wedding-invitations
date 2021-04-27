@@ -6,6 +6,7 @@ const Details = () => {
   return (
     <div>
       <div className="detail-container">
+        <></>
         <Image src={Couple} className="detail-image" />
 
         <div>

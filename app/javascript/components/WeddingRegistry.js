@@ -11,6 +11,7 @@ const WeddingRegistry = ({ RSVPYes, onViewDetails, fromHomepage }) => {
   return (
     <div>
       <div>
+        <></>
         <p className="gift-header">
           You're presence is all that is needed. But if you want to, feel free
           to make a contribution to our future growth fund or buy us a gift.

@@ -95,6 +95,7 @@ class App extends React.Component {
     return (
       <>
         <div className="form-container">
+          <></>
           <Toolbar className="toolbar">
             <div className="toolbar-image">
               <input

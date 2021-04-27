@@ -13,6 +13,7 @@ class Artwork extends React.Component {
   loadArtwork() {
     return (
       <div className="artwork-container">
+        <></>
         <Image src={WelcomeImage} alt="Image" fluid />
         {this.props.submitted < this.props.guests.length ? (
           <button className="submit" onClick={this.props.onClick}>

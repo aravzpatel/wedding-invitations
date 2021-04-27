@@ -26,6 +26,7 @@ class Welcome extends React.Component {
   render() {
     return (
       <div className="welcome-greeting">
+        <></>
         <div>{this.listNames()}</div>
       </div>
     );

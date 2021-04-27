@@ -52,6 +52,7 @@ const ConfirmationForm = ({ guests, guestNumber, onSubmit }) => {
 
   return (
     <div>
+      <></>
       <div>
         <div className="confirmation-wrapper">
           <div className="confirmation-guests">
