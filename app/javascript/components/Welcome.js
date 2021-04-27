@@ -1,38 +1,39 @@
 import React from "react";
 import PropTypes from "prop-types";
 class Welcome extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.listNames = this.listNames.bind(this);
   }
 
-  listNames(){
+  listNames() {
     var guests = this.props.guests;
     var names = [];
     names = guests.map((guest) => guest.first_name);
     var guestList;
 
-    if(names.length > 1){
-      return guestList = names.splice(0, names.length-1).join(", ") + " and "+ names[names.length - 1];
+    if (names.length > 1) {
+      return (guestList =
+        names.splice(0, names.length - 1).join(", ") +
+        " and " +
+        names[names.length - 1]);
     } else {
-      return guestList = names[0];
+      return (guestList = names[0]);
     }
   }
 
-  render () {
+  render() {
     return (
-      <div className = 'welcome-greeting'>
-        <div>
-          {this.listNames()}
-        </div>
+      <div className="welcome-greeting">
+        <div>{this.listNames()}</div>
       </div>
     );
   }
 }
 
 Welcome.propTypes = {
-  guests: PropTypes.array
+  guests: PropTypes.array,
 };
 
 export default Welcome;
