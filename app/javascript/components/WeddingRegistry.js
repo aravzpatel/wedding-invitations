@@ -2,7 +2,7 @@ import React from "react";
 import Image from "react-bootstrap/Image";
 import Logo from "../../assets/images/logo.svg";
 
-const WeddingRegistry = ({ RSVPYes, onViewDetails, fromHomepage }) => {
+const WeddingRegistry = ({ thanks }) => {
   const openRegistery = () => {
     window.open("https://www.marriagegiftlist.com/EQZK9M", "_blank");
   };
@@ -10,6 +10,12 @@ const WeddingRegistry = ({ RSVPYes, onViewDetails, fromHomepage }) => {
   return (
     <div>
       <div>
+        {thanks && (
+          <p className="gift-header">
+            Thanks for submitting your confirmation form.
+          </p>
+        )}
+
         <p className="gift-header">
           You're presence is all that is needed. But if you want to, feel free
           to make a contribution to our future growth fund or buy us a gift.

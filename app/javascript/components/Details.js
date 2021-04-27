@@ -9,7 +9,7 @@ const Details = () => {
         <div className="detail-image-wrapper">
           <Image src={Couple} className="detail-image" />
         </div>
-        <div>
+        <div className="detail-copy">
           <div className="detail-header">CEREMONY & CELEBRATION</div>
           <p className="detail-subcopy"> The main event</p>
           <p>

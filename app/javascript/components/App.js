@@ -25,6 +25,7 @@ class App extends React.Component {
     this.onViewDetails = this.onViewDetails.bind(this);
     this.renderForm = this.renderForm.bind(this);
     this.renderGifts = this.renderGifts.bind(this);
+    this.renderGiftsWithThanks = this.renderGiftsWithThanks.bind(this);
     this.setFromHomepage = this.setFromHomepage.bind(this);
     this.endForm = this.endForm.bind(this);
   }
@@ -48,10 +49,8 @@ class App extends React.Component {
   }
 
   endForm() {
-    console.log("does this trigger?");
-
     if (this.state.completedRSVP === this.props.guests.length) {
-      this.renderGifts();
+      this.renderGiftsWithThanks();
     }
   }
 
@@ -82,6 +81,13 @@ class App extends React.Component {
       displayConfirmationForm: false,
       displayDetails: false,
       displayGifts: true,
+    });
+  }
+
+  renderGiftsWithThanks() {
+    this.renderGifts();
+    this.setState({
+      thanks: true,
     });
   }
 
@@ -148,11 +154,7 @@ class App extends React.Component {
           )}
           {this.state.displayDetails && <Details />}
           {this.state.displayGifts && (
-            <WeddingRegistry
-              fromHomepage={this.state.fromHomepage}
-              RSVPYes={this.state.RSVPYes}
-              onViewDetails={this.onViewDetails}
-            />
+            <WeddingRegistry thanks={this.state.thanks} />
           )}
         </div>
       </>

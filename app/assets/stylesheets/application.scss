@@ -283,6 +283,8 @@ body {
 }
 
 .detail-hog {
+  width: 50%;
+  padding: 10px;
   padding-top: 20px;
 }
 
@@ -293,20 +295,24 @@ body {
 }
 
 .detail-image-wrapper {
-  // text-align: right;
-  // position: absolute;
+  text-align: right;
+  position: absolute;
   width: fit-content;
-  top: 15%;
+  top: 20%;
   float: right;
 }
 
 .detail-container {
-  // position: relative;
+  position: relative;
+}
+.detail-copy {
+  width: 50%;
+  padding: 10px;
 }
 
 .gift-button {
   width: fit-content;
-  height: 45px;
+  padding: 15px;
   border: 2px solid #fd6666;
   box-sizing: border-box;
   border-radius: 25px;
@@ -336,4 +342,8 @@ body {
 .gift-logo {
   margin-top: 20px;
   text-align: center;
+}
+
+.rotate {
+  width: 60%;
 }

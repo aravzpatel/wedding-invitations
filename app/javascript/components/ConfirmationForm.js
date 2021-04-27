@@ -55,9 +55,10 @@ const ConfirmationForm = ({ guests, guestNumber, onSubmit }) => {
       <div>
         <div className="confirmation-wrapper">
           <div className="confirmation-guests">
-            {guests[guestNumber].first_name +
-              " " +
-              guests[guestNumber].last_name}
+            {guestNumber < guests.length &&
+              guests[guestNumber].first_name +
+                " " +
+                guests[guestNumber].last_name}
           </div>
         </div>
 
