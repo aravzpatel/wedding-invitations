@@ -1,13 +1,9 @@
-import React, { useState } from "react";
-import Couple from "../../assets/images/couple.png";
-import Image from "react-bootstrap/Image";
+import React from "react";
 
 const Details = () => {
   return (
     <div>
       <div className="detail-container">
-        <Image src={Couple} className="detail-image" />
-
         <div>
           <div className="detail-header">CEREMONY & CELEBRATION</div>
           <p className="detail-subcopy"> The main event</p>
