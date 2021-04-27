@@ -34,6 +34,7 @@
 /config/master.key
 
 /node_modules
+/tmp
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
