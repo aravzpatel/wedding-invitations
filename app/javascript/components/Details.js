@@ -1,9 +1,14 @@
 import React from "react";
+import Couple from "../../assets/images/image.png";
+import Image from "react-bootstrap/Image";
 
 const Details = () => {
   return (
     <div>
       <div className="detail-container">
+        <div className="detail-image-wrapper">
+          <Image src={Couple} className="detail-image" />
+        </div>
         <div>
           <div className="detail-header">CEREMONY & CELEBRATION</div>
           <p className="detail-subcopy"> The main event</p>
@@ -23,7 +28,7 @@ const Details = () => {
             <strong>End:</strong> 11 PM
           </p>
           <p>
-            <strong>Dress:</strong> Your best. Ditch the suit and come correct
+            <strong>Dress:</strong> Dress your best and come correct
           </p>
         </div>
         <div className="detail-hog">

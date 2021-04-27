@@ -4,7 +4,7 @@ import Logo from "../../assets/images/logo.svg";
 
 const WeddingRegistry = ({ RSVPYes, onViewDetails, fromHomepage }) => {
   const openRegistery = () => {
-    window.open("https://google.com", "_blank");
+    window.open("https://www.marriagegiftlist.com/EQZK9M", "_blank");
   };
 
   return (
