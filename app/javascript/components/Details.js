@@ -61,13 +61,15 @@ const Details = () => {
           walk from our house
         </p>
         <p>
-          <strong>Train:</strong> Deptford train station (10 mins walk)
+          <strong>Train:</strong> Deptford train station (10 mins walk) New
+          Cross station (20 mins walk)
         </p>
         <p>
           <strong>Boat:</strong> Greenwich Pier (20 mins walk)
         </p>
         <p>
-          <strong>By Car:</strong> Free parking on Watergate Street
+          <strong>By Car:</strong> Free parking on Watergate Street & New King
+          Street
         </p>
       </div>
       <div className="map-wrapper">

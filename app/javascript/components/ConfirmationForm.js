@@ -73,7 +73,7 @@ const ConfirmationForm = ({ guests, guestNumber, onSubmit }) => {
           Saturday 17th July, The Master Shipwrights House
         </div>
         <div className="form-header">Ceremony & Celebration</div>
-        <div className="form-header">11.45am Start</div>
+        <div className="form-header">11.30am Start</div>
         <div className="form-title">Event Attendance</div>
         <RadioGroup
           state={isAttendingWedding}
@@ -97,7 +97,9 @@ const ConfirmationForm = ({ guests, guestNumber, onSubmit }) => {
               <div className="form-header-second">
                 Sunday 18th July, The Dog & Bell Pub
               </div>
-              <div className="form-header-second">Hog Roast</div>
+              <div className="form-header-second-bottom">
+                Hog Roast, Optional
+              </div>
               <div className="form-header-second-bottom">From 1pm</div>
 
               <RadioGroup

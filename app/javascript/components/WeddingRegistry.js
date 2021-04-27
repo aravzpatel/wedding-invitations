@@ -7,6 +7,10 @@ const WeddingRegistry = ({ thanks }) => {
     window.open("https://www.marriagegiftlist.com/EQZK9M", "_blank");
   };
 
+  const openPool = () => {
+    window.open("https://paypal.me/pools/c/8yY53NtLak", "_blank");
+  };
+
   return (
     <div>
       <div>
@@ -22,7 +26,7 @@ const WeddingRegistry = ({ thanks }) => {
         </p>
       </div>
       <div className="gift-button-wrapper">
-        <button type="button" className="gift-button">
+        <button type="button" onClick={openPool} className="gift-button">
           Make a donation
         </button>
         <button type="button" onClick={openRegistery} className="gift-button">
