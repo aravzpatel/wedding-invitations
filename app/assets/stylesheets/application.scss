@@ -142,7 +142,8 @@ body {
   background-size: auto 7px; /* if linear-gradient, we need to resize it */
 }
 
-.toolbar-button:focus {
+.toolbar-button:focus,
+.toolbar-button[data-status="true"] {
   outline: none;
 }
 
@@ -150,6 +151,7 @@ body {
   width: 100%;
   max-width: 30px;
   height: auto;
+  outline: none;
 }
 
 .confirmation-header {

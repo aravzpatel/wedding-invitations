@@ -48,6 +48,8 @@ class App extends React.Component {
   }
 
   endForm() {
+    console.log("does this trigger?");
+
     if (this.state.completedRSVP === this.props.guests.length) {
       this.renderGifts();
     }
@@ -90,8 +92,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("submitted", this.props.submitted);
-
     return (
       <>
         <div className="form-container">
@@ -106,7 +106,11 @@ class App extends React.Component {
             </div>
 
             {this.state.completedRSVP < this.props.guests.length && (
-              <button className="toolbar-button" onClick={this.renderForm}>
+              <button
+                className="toolbar-button"
+                data-status={this.state.displayConfirmationForm}
+                onClick={this.renderForm}
+              >
                 RSVP
               </button>
             )}
