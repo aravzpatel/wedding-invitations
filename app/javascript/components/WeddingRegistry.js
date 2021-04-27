@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Image from "react-bootstrap/Image";
+import Logo from "../../assets/images/logo.svg";
 
 const WeddingRegistry = ({ RSVPYes, onViewDetails, fromHomepage }) => {
   const openRegistery = () => {
@@ -10,8 +12,8 @@ const WeddingRegistry = ({ RSVPYes, onViewDetails, fromHomepage }) => {
     <div>
       <div>
         <p className="gift-header">
-          You're presence is all that is needed, but if you want to we'd love a
-          donation to our future growth fund or buying us a gift
+          You're presence is all that is needed. But if you want to, feel free
+          to make a contribution to our future growth fund or buy us a gift.
         </p>
       </div>
       <div className="gift-button-wrapper">
@@ -21,6 +23,9 @@ const WeddingRegistry = ({ RSVPYes, onViewDetails, fromHomepage }) => {
         <button type="button" onClick={openRegistery} className="gift-button">
           Thinking of buying a gift?
         </button>
+      </div>
+      <div className="gift-logo">
+        <Image src={Logo} className="rotate" />
       </div>
     </div>
   );

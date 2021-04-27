@@ -1,54 +1,60 @@
 import React, { useState } from "react";
+import Couple from "../../assets/images/couple.png";
+import Image from "react-bootstrap/Image";
 
 const Details = () => {
   return (
     <div>
-      <div>
-        <div className="detail-header">Ceremony & Celebration</div>
-        <p className="detail-subcopy"> The main event</p>
-        <p>
-          <strong>Date:</strong> Saturday, 17th July
-        </p>
-        <p>
-          <strong>Venue:</strong> Master Shipwrights Palace
-        </p>
-        <p>
-          <strong>Address:</strong> Watergate St, Deptford, SE8 3JF
-        </p>
-        <p>
-          <strong>Arrive:</strong> 11.30 AM
-        </p>
-        <p>
-          <strong>End:</strong> 11 PM
-        </p>
-        <p>
-          <strong>Dress:</strong> Your best. Ditch the suit and come correct
-        </p>
-      </div>
-      <div className="detail-hog">
-        <div className="detail-header">Hog Roast</div>
-        <p className="detail-subcopy">
-          Wind down the next day at our local pub
-        </p>
-        <p>
-          <strong>Date:</strong> Sunday, 18th July
-        </p>
-        <p>
-          <strong>Venue:</strong>The Dog & Bell
-        </p>
-        <p>
-          <strong>Address:</strong> 116 Prince St, Deptford, SE8 3JD
-        </p>
-        <p>
-          <strong>Arrive:</strong> 1 PM
-        </p>
-        <p>
-          <strong>Dress:</strong> Chill
-        </p>
+      <div className="detail-container">
+        <Image src={Couple} className="detail-image" />
+
+        <div>
+          <div className="detail-header">CEREMONY & CELEBRATION</div>
+          <p className="detail-subcopy"> The main event</p>
+          <p>
+            <strong>Date:</strong> Saturday, 17th July
+          </p>
+          <p>
+            <strong>Venue:</strong> Master Shipwrights Palace
+          </p>
+          <p>
+            <strong>Address:</strong> Watergate St, Deptford, SE8 3JF
+          </p>
+          <p>
+            <strong>Arrive:</strong> 11.30 AM
+          </p>
+          <p>
+            <strong>End:</strong> 11 PM
+          </p>
+          <p>
+            <strong>Dress:</strong> Your best. Ditch the suit and come correct
+          </p>
+        </div>
+        <div className="detail-hog">
+          <div className="detail-header">HOG ROAST</div>
+          <p className="detail-subcopy">
+            Wind down the next day at our local pub
+          </p>
+          <p>
+            <strong>Date:</strong> Sunday, 18th July
+          </p>
+          <p>
+            <strong>Venue:</strong>The Dog & Bell
+          </p>
+          <p>
+            <strong>Address:</strong> 116 Prince St, Deptford, SE8 3JD
+          </p>
+          <p>
+            <strong>Arrive:</strong> 1 PM
+          </p>
+          <p>
+            <strong>Dress:</strong> Chill
+          </p>
+        </div>
       </div>
 
       <div className="detail-hog">
-        <div className="detail-header">Getting There</div>
+        <div className="detail-header">GETTING THERE</div>
         <p className="detail-subcopy">
           It's a family affair. We're keeping it local with both venues 5 mins
           walk from our house
