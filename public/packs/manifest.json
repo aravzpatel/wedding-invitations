@@ -1,13 +1,13 @@
 {
-  "application.js": "/packs/js/application-4b834b42ca1930a466be.js",
-  "application.js.map": "/packs/js/application-4b834b42ca1930a466be.js.map",
+  "application.js": "/packs/js/application-6c22d3986214522d5bf0.js",
+  "application.js.map": "/packs/js/application-6c22d3986214522d5bf0.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-4b834b42ca1930a466be.js"
+        "/packs/js/application-6c22d3986214522d5bf0.js"
       ],
       "js.map": [
-        "/packs/js/application-4b834b42ca1930a466be.js.map"
+        "/packs/js/application-6c22d3986214522d5bf0.js.map"
       ]
     },
     "hello_react": {
@@ -20,10 +20,10 @@
     },
     "server_rendering": {
       "js": [
-        "/packs/js/server_rendering-4428176a709bcb05685d.js"
+        "/packs/js/server_rendering-af34afbee9da95ad070d.js"
       ],
       "js.map": [
-        "/packs/js/server_rendering-4428176a709bcb05685d.js.map"
+        "/packs/js/server_rendering-af34afbee9da95ad070d.js.map"
       ]
     }
   },
@@ -33,6 +33,6 @@
   "media/images/couple.png": "/packs/media/images/couple-2e921ca4.png",
   "media/images/icon.png": "/packs/media/images/icon-74f85a4e.png",
   "media/images/logo.svg": "/packs/media/images/logo-72189598.svg",
-  "server_rendering.js": "/packs/js/server_rendering-4428176a709bcb05685d.js",
-  "server_rendering.js.map": "/packs/js/server_rendering-4428176a709bcb05685d.js.map"
+  "server_rendering.js": "/packs/js/server_rendering-af34afbee9da95ad070d.js",
+  "server_rendering.js.map": "/packs/js/server_rendering-af34afbee9da95ad070d.js.map"
 }
