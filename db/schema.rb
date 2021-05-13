@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_22_181555) do
+ActiveRecord::Schema.define(version: 2021_05_13_071508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 2021_04_22_181555) do
     t.string "sunday"
     t.boolean "confirmsubmit"
     t.string "otherdiet"
+    t.boolean "evening_invite"
+    t.boolean "evening_confirmation"
     t.index ["first_name"], name: "index_guests_on_first_name"
     t.index ["last_name"], name: "index_guests_on_last_name"
     t.index ["party_id"], name: "index_guests_on_party_id"

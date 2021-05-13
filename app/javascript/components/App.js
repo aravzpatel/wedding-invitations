@@ -1,6 +1,7 @@
 import React from "react";
 import Artwork from "./Artwork";
 import ConfirmationForm from "./ConfirmationForm";
+import EveningForm from "./EveningForm";
 import { Toolbar } from "@material-ui/core";
 import Details from "./Details";
 import WeddingRegistry from "./WeddingRegistry";
@@ -49,8 +50,14 @@ class App extends React.Component {
   }
 
   endForm() {
-    if (this.state.completedRSVP === this.props.guests.length) {
-      this.renderGiftsWithThanks();
+    console.log("does the end form function get called");
+    if (
+      this.state.completedRSVP === this.props.guests.length ||
+      this.props.evening
+    ) {
+      console.log("does the end form condtion render");
+
+      this.renderGifts();
     }
   }
 
@@ -137,10 +144,10 @@ class App extends React.Component {
             <Artwork
               onClick={this.renderForm}
               guests={this.props.guests}
-              submitted={this.state.completedRSVP}
+              submitted={0}
             />
           )}
-          {this.state.displayConfirmationForm && (
+          {this.state.displayConfirmationForm && !this.props.evening && (
             <>
               <ConfirmationForm
                 guests={this.props.guests}
@@ -148,6 +155,19 @@ class App extends React.Component {
                 onSubmit={() => {
                   this.onRSVPSubmit();
                   this.endForm();
+                }}
+              />
+            </>
+          )}
+          {this.state.displayConfirmationForm && this.props.evening && (
+            <>
+              <EveningForm
+                guests={this.props.guests}
+                guestNumber={this.state.completedRSVP}
+                onSubmit={() => {
+                  console.log("do I call the onSubmit");
+                  this.endForm();
+                  this.onRSVPSubmit();
                 }}
               />
             </>

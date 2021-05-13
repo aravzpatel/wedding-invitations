@@ -3,7 +3,7 @@ class GuestsController < ApplicationController
 
   def update
     @guest = Guest.find(params[:id])
-    @guest.update(confirmation: params[:confirmation], sunday: params[:sunday], diet: params[:diet],  otherdiet: params[:otherdiet], confirmsubmit: true)
+    @guest.update(confirmation: params[:confirmation], sunday: params[:sunday], diet: params[:diet],  otherdiet: params[:otherdiet], confirmsubmit: true, evening_confirmation: params[:evening_confirmation])
   end
 
 end

@@ -10,3 +10,7 @@ party2 = Party.create({party: 'test-guest'})
 
 party2.guests.create({first_name: 'Mike', last_name: 'Jones'})
 party2.guests.create({first_name: 'Tina', last_name: 'Turner'})
+
+party3 = Party.create({party: 'evening-guest'})
+
+party3.guests.create({first_name: 'James', last_name: 'Brown', evening_invite: true})

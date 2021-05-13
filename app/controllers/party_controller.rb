@@ -5,6 +5,7 @@ class PartyController < ApplicationController
     @party = Party.friendly.find(params[:id])
     @guests = @party.guests
     @submitted = @party.guests.count {|guest| guest.confirmsubmit == true}
+    @evening = @party.guests.count {|guest| guest.evening_invite == true}
   end
 
   def update

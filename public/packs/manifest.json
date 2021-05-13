@@ -1,0 +1,37 @@
+{
+  "application.js": "/packs/js/application-fc633d98b29f3289eb5e.js",
+  "application.js.map": "/packs/js/application-fc633d98b29f3289eb5e.js.map",
+  "entrypoints": {
+    "application": {
+      "js": [
+        "/packs/js/application-fc633d98b29f3289eb5e.js"
+      ],
+      "js.map": [
+        "/packs/js/application-fc633d98b29f3289eb5e.js.map"
+      ]
+    },
+    "hello_react": {
+      "js": [
+        "/packs/js/hello_react-5cc4bb1e8e1c4954106d.js"
+      ],
+      "js.map": [
+        "/packs/js/hello_react-5cc4bb1e8e1c4954106d.js.map"
+      ]
+    },
+    "server_rendering": {
+      "js": [
+        "/packs/js/server_rendering-9c96f78e54bbde154fac.js"
+      ],
+      "js.map": [
+        "/packs/js/server_rendering-9c96f78e54bbde154fac.js.map"
+      ]
+    }
+  },
+  "hello_react.js": "/packs/js/hello_react-5cc4bb1e8e1c4954106d.js",
+  "hello_react.js.map": "/packs/js/hello_react-5cc4bb1e8e1c4954106d.js.map",
+  "media/images/celebrate.svg": "/packs/media/images/celebrate-256d0f33.svg",
+  "media/images/icon.png": "/packs/media/images/icon-74f85a4e.png",
+  "media/images/logo.svg": "/packs/media/images/logo-72189598.svg",
+  "server_rendering.js": "/packs/js/server_rendering-9c96f78e54bbde154fac.js",
+  "server_rendering.js.map": "/packs/js/server_rendering-9c96f78e54bbde154fac.js.map"
+}
