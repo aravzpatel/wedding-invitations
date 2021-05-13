@@ -2,7 +2,7 @@ import React from "react";
 import Couple from "../../assets/images/image.png";
 import Image from "react-bootstrap/Image";
 
-const Details = () => {
+const Details = ({ evening }) => {
   return (
     <div>
       <div className="detail-container">
@@ -22,7 +22,7 @@ const Details = () => {
             <strong>Address:</strong> Watergate St, Deptford, SE8 3JF
           </p>
           <p>
-            <strong>Arrive:</strong> 11.30 AM
+            <strong>Arrive:</strong> {evening ? "6:00pm" : "11.30 AM"}
           </p>
           <p>
             <strong>End:</strong> 11 PM

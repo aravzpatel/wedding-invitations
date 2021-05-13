@@ -57,7 +57,7 @@ const ConfirmationForm = ({ guests, guestNumber, onSubmit }) => {
         </div>
 
         <p className="confirmation-header">
-          Kindly reply by 15th May 2021 to let us know if you’ll be able to make
+          Kindly reply by 29th May 2021 to let us know if you’ll be able to make
           it.
         </p>
       </div>
@@ -66,7 +66,7 @@ const ConfirmationForm = ({ guests, guestNumber, onSubmit }) => {
         <div className="form-header">
           Saturday 17th July, The Master Shipwrights House
         </div>
-        <div className="form-header">Ceremony & Celebration</div>
+        <div className="form-header">Evening Guest from 6pm</div>
         <div className="form-title">Event Attendance</div>
         <RadioGroup
           state={isAttendingEvening}

@@ -144,7 +144,7 @@ class App extends React.Component {
             <Artwork
               onClick={this.renderForm}
               guests={this.props.guests}
-              submitted={0}
+              submitted={this.state.completedRSVP}
             />
           )}
           {this.state.displayConfirmationForm && !this.props.evening && (
@@ -172,7 +172,9 @@ class App extends React.Component {
               />
             </>
           )}
-          {this.state.displayDetails && <Details />}
+          {this.state.displayDetails && (
+            <Details evening={this.props.evening} />
+          )}
           {this.state.displayGifts && (
             <WeddingRegistry thanks={this.state.thanks} />
           )}

@@ -1,13 +1,13 @@
 {
-  "application.js": "/packs/js/application-fc633d98b29f3289eb5e.js",
-  "application.js.map": "/packs/js/application-fc633d98b29f3289eb5e.js.map",
+  "application.js": "/packs/js/application-0c83807a37cb0d75c3bf.js",
+  "application.js.map": "/packs/js/application-0c83807a37cb0d75c3bf.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs/js/application-fc633d98b29f3289eb5e.js"
+        "/packs/js/application-0c83807a37cb0d75c3bf.js"
       ],
       "js.map": [
-        "/packs/js/application-fc633d98b29f3289eb5e.js.map"
+        "/packs/js/application-0c83807a37cb0d75c3bf.js.map"
       ]
     },
     "hello_react": {
@@ -20,10 +20,10 @@
     },
     "server_rendering": {
       "js": [
-        "/packs/js/server_rendering-9c96f78e54bbde154fac.js"
+        "/packs/js/server_rendering-15a321279cd452f7d6db.js"
       ],
       "js.map": [
-        "/packs/js/server_rendering-9c96f78e54bbde154fac.js.map"
+        "/packs/js/server_rendering-15a321279cd452f7d6db.js.map"
       ]
     }
   },
@@ -31,7 +31,8 @@
   "hello_react.js.map": "/packs/js/hello_react-5cc4bb1e8e1c4954106d.js.map",
   "media/images/celebrate.svg": "/packs/media/images/celebrate-256d0f33.svg",
   "media/images/icon.png": "/packs/media/images/icon-74f85a4e.png",
+  "media/images/image.png": "/packs/media/images/image-2e921ca4.png",
   "media/images/logo.svg": "/packs/media/images/logo-72189598.svg",
-  "server_rendering.js": "/packs/js/server_rendering-9c96f78e54bbde154fac.js",
-  "server_rendering.js.map": "/packs/js/server_rendering-9c96f78e54bbde154fac.js.map"
+  "server_rendering.js": "/packs/js/server_rendering-15a321279cd452f7d6db.js",
+  "server_rendering.js.map": "/packs/js/server_rendering-15a321279cd452f7d6db.js.map"
 }
